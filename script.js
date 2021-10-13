@@ -829,9 +829,38 @@ function funVal(){
 	alert(this.value);
 	this.removeEventListener('click', funVal);
 
-}*/
+}
 
 //22.7
 
+window.onload = function(){
 
+	let elems = document.getElementsByTagName('p');
 
+	//(let i = 0; i < elems.length; i++)
+	
+	for(let elem of elems){
+		elem.addEventListener('click', sqrFunc);
+	}
+}
+
+function sqrFunc(){
+	this.innerHTML = Math.pow(parseInt(this.innerHTML), 2); 
+}*/
+
+//22.8
+
+window.onload = function (){
+
+	let elements = document.getElementsByTagName('input');
+	
+	for (let element of elements){
+
+		element.addEventListener('', borderFunc);
+	}
+}
+
+function borderFunc(){
+
+	
+}
