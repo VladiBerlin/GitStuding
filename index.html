@@ -1,0 +1,584 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<title>Это заголовок тайтл</title>
+	<script src="script.js"></script>
+	<style type="text/css">
+
+		body {
+
+			background-color: black;
+			text-decoration-color: white;
+			color: white;
+		}
+		
+		input {
+
+			width: 20vw;
+			padding: 10px 2px 10px 2px;
+		}
+
+		label{
+
+			font-family: "Lucida Console", "Courier New", monospace;
+			font-size: 30px;
+
+		}
+
+		p {
+
+			font-family: "Lucida Console", "Courier New", monospace;
+			font-size: 30px;
+		}
+
+		.my-class{
+
+			color: red;
+		}
+
+		img{
+
+			height: 40vh;
+			width: 30vw;
+		}
+
+		table, th, td{
+
+			border: 1px solid white;
+		}
+	
+	</style>
+</head>
+<body>
+
+	<!--<form action="">
+		<fieldset>
+			<legend>Task_19_1</legend>
+			<button onclick="alert('Hello Vlad!')">on click</button>
+		</fieldset>	
+	</form>
+	<br><br>
+
+	<form>
+		<fieldset>
+			<legend>Task_19_2</legend>
+			<button onmouseover="alert('Hello Vlad!')">on click</button>
+		</fieldset>
+	</form>
+	<br><br>
+
+	<form>
+		<fieldset>
+			<legend>Task_19_3</legend>
+			<button onmouseout="alert('Hello Vlad!')">on click</button>
+		</fieldset>
+	</form>
+	<br><br>
+
+	<form>
+		<fieldset>
+			<legend>Task_19_4</legend>
+			<input ondblclick ="alert('Hello Vlad!')" type="text" name="text" value="Повторите страницу по данному по образцу:">
+		</fieldset>
+	</form>
+	<br><br>
+
+	<form>
+		<fieldset>
+			<legend>Task_19_5</legend>
+			<input id="19_5" type="text" name="text" value="ku-ku">
+			<button onclick="kuku()">on click</button>
+		</fieldset>
+	</form>
+	<br><br>
+
+	<form>
+		<fieldset>
+			<legend>Task_19_6</legend>
+			<input id="19_6" type="text" name="text" value="ku-ku">
+			<input type="submit" onclick="chVl()"></input>
+		</fieldset>
+	</form>
+	<br><br>
+
+	<form>
+	<fieldset>
+			<legend>Task_19_7</legend>
+			<img id="19_7" src="img/1.jpg">
+			<input type="submit" onclick="chImg()"></input>
+		</fieldset>
+	</form>
+	<br><br>
+
+	<form>
+	<fieldset>
+			<legend>Task_19_8</legend>
+			<input type="text" name="text" value="push me!" onclick="pushAl(this)">
+		</fieldset>
+	</form>
+	<br><br>
+
+	<form>
+	<fieldset>
+			<legend>Task_19_9</legend>
+			<input type="text" name="text" value="push me!" onclick="pushMe(this)">
+		</fieldset>
+	</form>
+	<br><br>
+
+	<form>
+	<fieldset>
+			<legend>Task_19_10</legend>
+			<input type="text" name="text" value="push me!" onclick="chaTex(this)" onmouseout="chaTex2(this)">
+		</fieldset>
+	</form>
+	<br><br>
+
+	<form>
+	<fieldset>
+			<legend>Task_19_11</legend>
+			<input type="text" name="text" value="push me!" onclick="chaTex(this)" onmouseout="chaTex2(this)">
+		</fieldset>
+	</form>
+	<br><br>
+
+	<form>
+	<fieldset>
+			<legend>Task_19_12</legend>
+			<label for="submit">Это input type="submit".</label><br><br>
+			<input name="submit" type="submit" onclick="chImg()"></input>
+		</fieldset>
+	</form>
+	<br><br>
+
+	<form>
+	<fieldset>
+			<legend>Task_19_13</legend>
+			<label for="submit">Это input type="submit".</label><br><br>
+			<input name="submit" type="submit" onclick = "chaBut(this)" onmouseout = "chaBut(this)" value="click"></input>
+		</fieldset>
+	</form>
+	<br><br>
+
+	<form>
+	<fieldset>
+			<legend>Task_19_14</legend>
+			<label for="submit">Это input type="submit".</label><br><br>
+			<input name="submit" type="submit" onclick = "disable(this)" value="click"></input>
+		</fieldset>
+	</form>
+	<br><br>
+
+	<form>
+	<fieldset>
+			<legend>Task_19_15</legend>
+			<br><br>
+			<img id="19_15" src="img/1.jpg" onmouseover="imgChange(this)" onmouseout="imgChange(this)">
+			<br><br>
+		</fieldset>
+	</form>
+	<br><br>
+
+	<form>
+	<fieldset>
+			<legend>Task_19_16</legend>
+			<input type="text" name="text" value="ku - ku" id="19_16">
+			<input name="button" type="button" onclick = "textRed()" value="click"></input>
+		</fieldset>
+	</form>
+	<br><br>
+
+	<form>
+	<fieldset>
+			<legend>Task_19_17</legend>
+			<input type="text" name="text" value="text" id="19_17">
+			<input name="button" type="button" onclick = "redText()" value="click"></input>
+		</fieldset>
+	</form>
+	<br><br>
+
+	<form>
+	<fieldset>
+			<legend>Task_19_18</legend>
+			<label for="submit">Это input type="submit".</label><br><br>
+			<input name="button" type="button" onclick="dis(this), display()"  value="click" id="19_18"></input><br>
+			<input name="button" style="display: none"  type="button" onclick = "diplayNone(this), enable()" value="click" id="19_181"></input>
+		</fieldset>
+	</form>
+	<br><br>
+
+	<form>
+		<fieldset>
+			<legend>Task_19_18_real</legend>
+			<br><br>
+			<input type="button" name="button" value="0" onclick="subtract(this)">
+			<br><br>
+		</fieldset>
+	</form>
+
+	<form>
+		<fieldset>
+			<legend>Task_19_19</legend><br><br>
+			<input type="text" name="text" value="I am at the left" id="19_19">
+			<input type="button" name="button" value="click me" onclick="cssFloat()">
+		</fieldset>
+	</form>
+
+	<form>
+		<fieldset>
+			<legend>Task_19_20</legend><br><br>
+			<input type="text" name="text" value="ku - ku" id="19_20">
+			<input type="button" name="button" value="click me" onclick="writeNew()">
+		</fieldset>
+	</form>
+
+	<form>
+		<fieldset>
+			<legend>Task_19_21</legend><br><br>
+			<input type="text" name="text" value="Hello" id="19_21">
+			<input type="text" name="text" value="Terve" id="19_21_1">
+			<input type="button" name="button" value="click me" onclick="newWrite()">
+		</fieldset>
+	</form>
+
+	<form>
+		<fieldset>
+			<legend>Task_19_22</legend><br><br>
+			<input type="text" name="text" value="" id="19_22">
+			<input type="text" name="text" value="" id="19_22_1">
+			<input type="button" name="button" value="click me" onclick="powIt()">
+		</fieldset>
+	</form>
+
+	<form>
+		<fieldset>
+			<legend>Task_19_23</legend><br><br>
+			<input type="text" name="text" value="" id="19_23"><br><br>
+			<input type="text" name="text" value="" id="19_23_1"><br><br>
+			<input type="button" name="button" value="click me" onclick="powIt()">
+		</fieldset>
+	</form>
+
+	<form>
+		<fieldset>
+			<legend>Task_19_24</legend><br><br>
+			<input type="text" name="text" value="" id="19_24"><br><br>
+			<input type="button" name="button" value="click me" onclick="hover()"><br><br>
+		</fieldset>
+	</form>
+
+	<form>
+		<fieldset>
+			<legend>Task_19_25</legend><br><br>
+			
+			<input type="text" name="text" value="" id="19_25" style="width: 40vw"><br><br>
+			<input type="button" name="button" value="push +" onclick="addSelector(this)"><br>
+			<input type="button" name="button" value="push -" onclick="addSelector(this)"><br>
+			<input type="button" name="button" value="push /" onclick="addSelector(this)"><br>
+			<input type="button" name="button" value="push *" onclick="addSelector(this)"><br><br><br>
+			<input type="button" name="button" value="1" onclick="addNum(this)"><br>
+			<input type="button" name="button" value="2" onclick="addNum(this)"><br>
+			<input type="button" name="button" value="3" onclick="addNum(this)"><br>
+			<input type="button" name="button" value="4" onclick="addNum(this)"><br>
+			<input type="button" name="button" value="5" onclick="addNum(this)"><br>
+			<input type="button" name="button" value="6" onclick="addNum(this)"><br>
+			<input type="button" name="button" value="7" onclick="addNum(this)"><br>
+			<input type="button" name="button" value="8" onclick="addNum(this)"><br>
+			<input type="button" name="button" value="9" onclick="addNum(this)"><br>
+			<input type="button" name="button" value="0" onclick="addNum(this)"><br>
+
+
+		</fieldset>
+	</form>
+
+	<form>
+		<fieldset>
+			<legend>task_20_1</legend><br><br>
+			
+			<p id="text">При нажатии на кнопку текст в абзаце поменяется.</p><br><br>
+			
+			<input type="button" name="button" onclick="buttonClick()" value="click on it">
+		</fieldset>
+	</form>
+
+	<form>
+		<fieldset>
+			<legend>task_20_2</legend>
+			<p id="tex">При нажатии на кнопку текст в абзаце поменяется.</p><br><br>
+			<input type="button" name="button" value="click" onclick="clickButton()">
+		</fieldset>
+	</form>
+
+	<form>
+		<fieldset>
+			<legend>task_20_3</legend>
+			<p id="tet">При нажатии на кнопку абзац станет h3, но текст останется.</p><br><br>
+			<input type="button" name="button" value="click" onclick="clBut()">
+		</fieldset>
+	</form>
+
+	<form>
+		<fieldset>
+			<legend>task_20_4</legend><br><br>
+			<input type="text" name="text" id="num1"><p> + </p><input type="text" name="text" id="num2"> <p> = </p><p id="sum"></p>
+			<input type="button" name="button" value="reckon" onclick="subtract()">
+		</fieldset>
+	</form>
+
+<form>
+		<fieldset>
+			<legend>task_20_5</legend><br><br>
+			<p>При нажатии на кнопку текст в каждом абзаце поменяется.</p><br>
+			<p>При нажатии на кнопку текст в каждом абзаце поменяется.</p><br>
+			<p>При нажатии на кнопку текст в каждом абзаце поменяется.</p><br>
+			<p>При нажатии на кнопку текст в каждом абзаце поменяется.</p><br>
+			<h2>А я h2 и не поменяюсь!</h2><br>
+			<input type="button" name="button" value="change" onclick="chP()">
+		</fieldset>
+	</form>
+
+	<form>
+		<fieldset>
+			<legend>task_20_6</legend><br><br>
+			<h2 class="www">Заголовок с классом www.</h2><br>
+			<p class="www">Абзац с классом www.</p><br>
+			<p class="www">Абзац с классом www.</p><br>
+			<p>Просто абзац, не поменяется.</p><br>
+			<input type="button" name="button" value="change" onclick="chClass()">
+		</fieldset>
+	</form>
+
+	<form>
+		<fieldset>
+			<legend>task_20_7</legend><br><br>
+			<h2 class="www">Заголовок с классом www, не поменяется.</h2><br>
+			<p class="www">Абзац с классом www.</p><br>
+			<p class="www">Абзац с классом www.</p><br>
+			<p class="www">Абзац с классом www.</p><br>
+			<p>Просто абзац, не поменяется.</p><br>
+			<input type="button" name="button" value="change" onclick="chBySelector()">
+		</fieldset>
+	</form>
+
+	<form>
+		<fieldset>
+			<legend>task_20_8</legend><br><br>
+			<p class="my-class">Абзац с class="my-class".</p><br><br>
+			<input type="button" name="button" value="change" onclick="getAttr()">
+		</fieldset>
+	</form>
+
+	<form>
+		<fieldset>
+			<legend>task_20_9</legend><br><br>
+			<p id="hello" class="my-class" style="color: red">Абзац с class="my-class". Класс задает красный цвет.</p><br><br>
+			<input type="button" name="button" value="change" onclick="getAttr()"><br><br>
+			<input type="button" name="button" value="remove" onclick="rmAttr()"><br><br>
+		</fieldset>
+	</form>
+
+	<form>
+		<fieldset>
+			<legend>task_20_10</legend><br><br>
+			<p id="hello" class="my-class class" >Абзац с class="my-class class". Класс "my-class" задает красный цвет.</p><br><br>
+			<input type="button" name="button" value="change" onclick="getAttr()"><br><br>
+			<input type="button" name="button" value="remove" onclick="rmAttr()"><br><br>
+		</fieldset>
+	</form>
+
+	<form>
+		<fieldset>
+			<legend>task_20_11</legend><br><br>
+			<input id="inp" type="text" name="text" value="" onkeyup="textAdd()"><p id="txt"></p><br><br>
+		</fieldset>
+	</form>
+
+	<form>
+		<fieldset>
+			<legend>task_20_12</legend><br><br>
+			<a id="rf1" href="https://www.google.com/">ref1</a><br><br>
+			<a id="rf2" href="https://yandex.ru/">ref2</a><br><br>
+			<a id="rf3" href="http://old.code.mu/javascript/pages/attrs.html">ref3</a><br><br>
+			<input type="button" name="button" value="change" onclick="chRef()"><br><br>
+		</fieldset>
+	</form>
+
+	<form>
+		<fieldset>
+			<legend>task_20_13</legend><br><br>
+			<p id="txtRed">Hello world!</p>
+			<input id="ch" type="button" name="button" value="change" onclick="chColor()"><br><br>
+		</fieldset>
+	</form>
+
+	<form>
+		<fieldset>
+			<legend>task_20_14</legend><br><br>
+			<p>Hello world!</p>
+			<p>Hello world!</p>
+			<p>Hello world!</p>
+			<p>Hello world!</p>
+			<p>Hello world!</p>
+			<p>Hello world!</p>
+			<p>Hello world!</p>
+			<input type="button" name="button" value="change" onclick="addNum()"><br><br>
+		</fieldset>
+	</form>
+
+	<form>
+		<fieldset>
+			<legend>task_20_15</legend>
+			<p>Hello world!</p>
+			<p>Hello world!</p>
+			<p>Hello world!</p>
+			<p>Hello world!</p>
+			<p>Hello world!</p>
+			<p>Hello world!</p>
+			<p>Hello world!</p>
+			<input type="button" name="button" value="change" onclick="addNum2()"><br><br>
+		</fieldset>
+	</form>
+	<form>
+		<fieldset>
+			<legend>task_20_12_(A) Count how many days is to your birsday.</legend><br><br>
+			<label for="text">Enter your year of birth here.</label><br>
+			<input type="text" name="year" value="1988" id="year"><br><br>
+			<label for="month">Enter your month of birth here.</label><br>
+			<input type="text" name="month" value="09" id="month"><br><br>
+			<label for="day">Enter your day of birth here.</label><br>
+			<input type="text" name="day" value="26" id="day"><br><br>
+			<input type="button" name="text" value="count" onclick="toCount()"><br><br>
+		</fieldset>
+	</form>
+
+	<form>
+		<fieldset>
+			<legend>task_20_12_(B) Count how many days is to your birsday.</legend><br><br>
+			<label for="day">Enter the date of your birthday here.</label><br>
+			<input type="text" name="day" value="1983-02-26" id="day"><br><br>
+			<input type="button" name="text" value="count" onclick="toCount()"><br><br>
+		</fieldset>
+	</form>
+
+	<form>
+		<fieldset>
+			<legend>task_21_1</legend>
+			<label>Timer</label>
+			<p id="second"> 0 </p><br><br>
+			<input type="button" name="button" value="start" onclick="timerStart()">
+		</fieldset>
+	</form>
+
+	<form>
+		<fieldset>
+			<legend>task_21_2</legend>
+			<label>Timer</label>
+			<p id="second"> 0 </p><br><br>
+			<input type="button" name="button" value="start" onclick="timerStart()"><br><br>
+			<input type="button" name="button" value="stop" onclick="timerStop()"><br><br>
+
+		</fieldset>
+	</form>
+		<fieldset>
+			
+			<legend>task_21_3</legend>
+			<label>Clock</label>
+			<p id="time" >It is a digital clock</p><br><br>
+
+		</fieldset>
+		
+
+		<form>
+			<fieldset>
+				<legend>task_21_4</legend>
+				<p id="timerBack">10</p>
+				<input type="button" name="start" onclick="timeBack()" value="start">
+			</fieldset>
+		</form>
+
+		<fieldset>
+				<legend>task_21_5</legend>
+				<img id="picture" src="img/1.jpg">
+		</fieldset>
+
+		<fieldset>
+				<legend>task_21_6</legend>
+				<img id="picture1" src="img/1.jpg">
+				<img id="picture2" src="img/2.jpg">
+				<img id="picture3" src="img/3.jpg">
+		</fieldset>
+
+		<form>
+			<fieldset>
+					<legend>task_21_7</legend>
+					<img id="picture1" src="img/1.jpg">
+					<img id="picture2" src="img/2.jpg">
+					<img id="picture3" src="img/3.jpg">
+					<img id="picture4" src="img/4.jpg">
+					<img id="picture5" src="img/5.jpg"><br><br>
+					<input type="button" name="start" value="start" onclick="startGallery();"><br><br>
+					<input type="button" name="stop" value="stop" onclick="stopGallery();"><br><br>
+
+			</fieldset>
+		</form>
+			
+
+		<h2>До полуночи осталось:</h2>
+
+		<table>
+			<tr>
+				<td>Часов</td>
+				<td>Минут</td>
+				<td>Секунд</td>
+			</tr>
+			<tr>
+				<td id="hour"></td>
+				<td id="min"></td>
+				<td id="sec"></td>
+			</tr>
+		</table>
+
+		<img src="file:///C:/js/img/1.jpg">
+		<img src="file:///C:/js/img/2.jpg">
+		<img src="file:///C:/js/img/3.jpg">
+
+		<p title="Всплывающая подсказка!">Наведи на меня мышкой!</p>
+
+		<p>22.3</p>
+
+		<a href="google.com">GOOGLE</a>
+		<a href="rambler.ru">Rambler</a>
+		<a href="yandex.ru">yandex.ru</a>
+
+		<p>22.4</p>
+
+		<a href="google.com">GOOGLE</a>
+		<a href="rambler.ru">Rambler</a>
+		<a href="yandex.ru">yandex.ru</a>
+
+		<p>22.5</p>
+		<form>
+
+			<input  type="text" value="hello" name="text"><br><br>
+			<input  type="text" name="morro" value="morro"><br><br>
+			<input  type="text" name="privet" value="privet"><br><br>
+			<p id='test'><br><br>
+		</form>
+
+		<p>22.6</p>
+		<form>
+
+			<input  type="text" value="hello" name="text"><br><br>
+			<input  type="text" name="morro" value="morro"><br><br>
+			<input  type="text" name="privet" value="privet"><br><br>
+		
+		</form>-->
+
+		<p>22.7</p>	
+		
+		
+		
+</body>
+</html>
