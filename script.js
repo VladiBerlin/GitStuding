@@ -720,7 +720,7 @@ window.onload = function(){
 
 }
 
-//22.1
+//23.1
 
 
 window.onload = function (){
@@ -738,7 +738,7 @@ function fun(){
 	alert(this.src);
 }
 
-//22.2
+//23.2
 
 
 window.onload = function (){
@@ -758,7 +758,7 @@ function fun(){
 
 }
 
-//22.3
+//23.3
 
 window.onload = function (){
 
@@ -775,7 +775,7 @@ function func(){
 	this.innerHTML = this.innerHTML + '(' + this.href + ')';
 }
 
-//22.4
+//23.4
 
 window.onload = function (){
 
@@ -794,7 +794,7 @@ function func(){
 
 }
 
-//22.5
+//23.5
 
 window.onload = function(){
 
@@ -812,7 +812,7 @@ function funVal(){
 	test.innerHTML = test.innerHTML + ', ' + this.value ;
 }
 
-//22.6
+//23.6
 
 window.onload = function(){
 
@@ -831,7 +831,7 @@ function funVal(){
 
 }
 
-//22.7
+//23.7
 
 window.onload = function(){
 
@@ -846,9 +846,9 @@ window.onload = function(){
 
 function sqrFunc(){
 	this.innerHTML = Math.pow(parseInt(this.innerHTML), 2); 
-}*/
+}
 
-//22.8
+//23.8
 
 window.onload = function (){
 
@@ -856,11 +856,673 @@ window.onload = function (){
 	
 	for (let element of elements){
 
-		element.addEventListener('', borderFunc);
+		element.addEventListener('blur', borderFunc);
 	}
 }
 
 function borderFunc(){
 
+	console.log('imput has ' + this.value.length + ' symbol(s)');
 	
+	if(this.value.length > 5){
+		this.style.borderColor = 'red';
+	}else{
+		this.style.borderColor = 'green';
+	}
+}
+
+//23.9
+
+window.onload = function (){
+
+	let elements = document.getElementsByTagName('div');
+	
+	for (let element of elements){
+
+		element.addEventListener('click', colorFunc);
+	}
+}
+
+function colorFunc(){
+	
+	(this.style.background != 'red') ? this.style.background = 'red': this.style.background = 'green';
+}
+
+//24.0
+
+window.onload = function (){
+	let elem = document.getElementById('elem1');
+	elem.classList.add('www');
+	//alert(elem.classList);
+}
+
+window.onload = function (){
+	let elem2 = document.getElementById('elem2');
+	elem2.classList.remove('www');
+	//alert(elem.classList);
+}
+
+window.onload = function (){
+	let elem3 = document.getElementById('elem3');
+	let contains = elem3.classList.contains('www');
+	alert(contains);
+}
+
+window.onload = function (){
+	let elem4 = document.getElementById('elem4');
+	elem4.classList.toggle('www');
+	elem4.classList.toggle('zzz');
+	elem4.classList.toggle('rrr');
+}
+
+window.onload = function (){
+	let elem5 = document.getElementById('elem5');
+	elem5.classList.toggle('www');
+	elem5.classList.toggle('zzz');
+	elem5.classList.toggle('rrr');
+	let leng = elem5.classList.length;
+	alert(leng);
+}
+
+window.onload = function (){
+	let elem6 = document.getElementById('elem6');
+	elem6.classList.toggle('www');
+	elem6.classList.toggle('zzz');
+	elem6.classList.toggle('rrr');
+	let leng = elem6.classList;
+	
+for(let elem of leng){
+	alert(elem);
+}
+}
+
+window.onload = function (){
+	let elem7 = document.getElementById('elem7');
+	elem7.classList.toggle('www');
+	elem7.classList.toggle('zzz');
+	elem7.classList.toggle('rrr');
+	
+	elem7.style.cssText += 'margin: 10px; float: right;';
+}
+
+window.onload = function (){
+	let elem8 = document.getElementById('elem8');
+	
+	elem8.addEventListener('click', tagFunc);
+}
+
+function tagFunc(){
+
+		alert(this.tagName);
+
+}
+
+window.onload = function (){
+	let elem9 = document.getElementById('elem9');
+	
+	elem9.addEventListener('click', tagFunc);
+}
+
+function tagFunc(){
+
+		alert(this.tagName.toLowerCase());
+
+}
+
+window.onload = function (){
+	let elem10 = document.getElementById('elem10');
+	
+	elem10.addEventListener('click', tagFunc);
+}
+
+function tagFunc(){
+
+		alert(this.tagName.toLowerCase());
+
+}
+
+window.onload = function (){
+	
+	let elem10 = document.querySelectorAll('#elem10');
+	
+	for(let elem of elem10){
+
+		alert(elem.tagName.toLowerCase());;
+	
+	}
+	
+}
+
+window.onload = function (){
+	
+	let elem11 = document.querySelector('#elem11');
+	
+	let list = document.createElement('li');
+
+	list.innerHTML = 'пункт';
+
+	elem11.appendChild(list);
+	
+}
+
+
+
+window.onload = function (){
+	
+	let elem12 = document.querySelector('#elem12');
+
+	let  arr = ['a', 'b', 'c', 'd'];
+	
+	for(let elem of arr){
+		let list = document.createElement('li');
+		list.innerHTML = elem;
+		elem12.appendChild(list);
+	}
+}
+
+window.onload = function (){
+	
+	let elem13 = document.querySelector('#elem13');
+	let elem = document.getElementById('elem');
+	let  newElem = document.createElement('li');
+	elem13.insertBefore(newElem, elem);
+
+	newElem.addEventListener('click', funcText);
+
+}
+
+function  funcText(){
+
+	this.innerHTML = 'Hello world!';
+
+}
+
+window.onload = function(){
+	let parent = document.getElementById('parent14');
+	let liElem = document.getElementById('elem14');
+	let newElem = document.createElement('li');
+	newElem.innerHTML = '!!!';
+	parent.insertBefore(newElem, liElem);
+}*/
+
+/*24.15 Вставка элементов через insertAdjacentHTML
+Для решения задач данного блока вам понадобятся следующие методы: insertAdjacentHTML.
+ Дан элемент #elem. Вставьте перед ним span с текстом '!!!'.
+
+ window.onload = function(){
+	let parent = document.getElementById('parent15');
+	//let liElem = document.getElementById('elem14');
+	// let newElem = document.createElement('span');
+	// newElem.innerHTML = '!!!';
+	parent.insertAdjacentHTML('beforeBegin', '<span>!!!</span>');
+}*/
+
+/* Дан элемент #elem. Вставьте после него span с текстом '!!!'
+
+window.onload = function(){
+	let elem = document.getElementById('elem');
+	elem.insertAdjacentHTML('afterEnd', '<span>!!!</span>');
+}*/
+
+/*Дан элемент #elem. Вставьте ему в начало span с текстом '!!!'.
+
+window.onload = function (){
+
+	let elem = document.getElementById('elem');
+	elem.insertAdjacentHTML('afterBegin', '<span>!!!</span>');
+}*/
+
+/*24.18 Дан элемент #elem. Вставьте ему в конец span с текстом '!!!'.
+
+window.onload = function (){
+
+	let elem = document.getElementById('elem');
+	elem.insertAdjacentHTML('beforeEnd', '<span>!!!</span>');
+}
+
+// Для решения задач данного блока вам понадобятся следующие свойства: firstElementChild, lastElementChild, children.
+//24.19  Дан элемент #elem. Найдите первого потомка этого элемента и сделайте его текст красного цвета.
+
+window.onload = function (){
+
+	let elem = document.getElementById('elem');
+	elem.firstElementChild.style.color ='red';
+}*/
+
+//24.20 Дан элемент #elem. Найдите последнего потомка этого элемента и сделайте его текст красного цвета.
+/*window.onload = function (){
+
+	let elem = document.getElementById('elem');
+	elem.lastElementChil.style.color ='red';
+}
+//24.21  Дан элемент #elem. Найдите всех потомков этого элемента и добавьте им в конец текст '!'.
+
+window.onload = function (){
+
+	let elem = document.getElementById('elem');
+	let elements = elem.children;
+	
+	for(let element of elements){
+		element.innerHTML += '!'
+	}
+}*/
+
+// Dля решения задач данного блока вам понадобятся следующие свойства: previousElementSibling, nextElementSibling.
+// 24.22 Дан элемент #elem. Найдите его соседа сверху и добавьте ему в конец текст '!'.
+
+/*window.onload = function (){
+
+	let elem = document.getElementById('elem');
+
+	elem.previousElementSibling.innerHTML += '!';
+	
+}*/
+
+// 24.23 Дан элемент #elem. Найдите его соседа снизу и добавьте ему в конец текст '!'.
+
+
+
+/*window.onload = function (){
+
+	let elem = document.getElementById('elem');
+
+	elem.nextElementSibling.innerHTML += '!';
+	
+}*/
+
+//24.24  Дан элемент #elem. Найдите его соседа снизу его соседа снизу (следующий элемент за соседним) и добавьте ему в конец текст '!'.
+
+/*window.onload = function (){
+
+	let elem = document.getElementById('elem');
+
+	let next = elem.nextElementSibling;
+
+	next.nextElementSibling.innerHTML += '!';
+	
+}*/
+
+// Для решения задач данного блока вам понадобятся следующие свойства: parentElement, parentNode.
+// 24.25 Дан элемент #elem. Найдите его родителя и покрасьте его в красный цвет.
+
+/*window.onload = function (){
+
+	let elem = document.getElementById('elem');
+
+	elem.parentElement.style.color = 'red';
+	
+}*/
+
+//24.26 Дан элемент #elem. Найдите родителя его родителя и покрасьте его в красный цвет.
+
+/*window.onload = function (){
+
+	let elem = document.getElementById('elem');
+
+	elem.parentElement.parentNode.style.color = 'red';
+	
+}*/
+
+// Для решения задач данного блока вам понадобятся следующие свойства: removeChild.
+
+//24.27 Дан элемент #parent, внутри него дан элемент #child. Дана кнопка. По нажатию на эту кнопку удалите элемент #child.
+
+/*window.onload = function (){
+
+	let elem = document.getElementById('elem');
+	let child = document.getElementById('child');
+	elem.removeChild(child);
+	
+}*/
+
+//24.28 Дан ol. По нажатию на кнопку получите его последнего потомка и удалите его.
+
+/*function deletFun(){
+	
+	let elem = document.getElementById('elem');
+	let lastChild = elem.lastChild;
+	elem.removeChild(lastChild);
+}*/
+
+//24.29 Дан элемент. Сделайте так, чтобы по нажатию по нему этот элемент удалялся.
+
+/*function removeElem(){
+	let elem = document.getElementById('elem');
+	elem.remove();
+}*/
+
+//24.30 
+
+/*window.onload = function (){
+
+	let elem = document.querySelector('#elem');
+	console.log(elem);
+
+	let elems = elem.children;
+	console.log(elems);
+	console.log(typeof(elems));
+
+	for(let element of elems){
+
+		element.addEventListener('click', funDel);
+	}
+}
+
+function funDel(){
+	this.remove();
+}*/
+
+//24.31 Дан инпут. Дана кнопка. По нажатию на кнопку клонируйте этот инпут.
+
+/*function eventFun(){
+
+	let inPut = document.getElementById('input');
+	let inClone = inPut.cloneNode('true');
+	console.log(typeof(inClone));
+	inPut.insertAdjacentElement('afterEnd',inClone);
+}*/
+
+//24.32 Дан массив. Создайте ul через createElement, затем вставьте каждый элемент этого массива в отдельную li внутри этой ul, затем вставьте эту ul в конец body.
+
+/*window.onload = function (){
+
+let body = document.getElementById('body');
+
+console.log(body);
+
+let ul = document.createElement('ul');
+
+body.insertBefore(ul, body.lastChild);
+
+let str = '24.32 Дан массив. Создайте ul через createElement, затем вставьте каждый элемент этого массива в отдельную li внутри этой ul, затем вставьте эту ul в конец body.';
+
+let arr = str.split(' ');
+
+console.log(arr);
+
+for(let i = 0; i < arr.length; i++){
+
+	let li = document.createElement('li');
+	li.innerHTML = arr[i];
+	ul.appendChild(li);
+	console.log(arr[i]);
+
+	}
+}*/
+
+//24.33 Дан инпут. Рядом с ним находится кнопочка "+". По нажатию на эту кнопку под нашим инпутом должен появится еще один пустой инпут.
+
+
+
+// function addInput(){
+// 	let forma = document.getElementById('forma');
+// 	let text = document.getElementById('text');
+// 	let space = document.getElementById('space');
+// 	let but = document.getElementById('but');
+// 	let addText = text.cloneNode(true);
+// 	let addSpace = space.cloneNode(true);
+// 	forma.insertBefore(addText, but);
+// 	forma.insertBefore(addSpace, but);
+// }
+
+//24.34 Дан инпут. В него вводится число. По потери фокуса сделайте так, чтобы каждая цифра вставилась в новый инпут. Инпутов для цифр изначально не существует, они должны создаться в процессе работы скрипта.
+
+// function addDivide(){
+
+// 	let form = document.getElementById('form');
+// 	let text = document.getElementById('text');
+// 	let space = document.getElementById('space');
+// 	let num = text.value.split('');
+// 	console.log(num);
+	
+// 	for(let i = 0; i < num.length; i++){
+		
+// 		let newText = text.cloneNode(true);
+// 		newText.value = num[i];
+// 		form.appendChild(newText);
+// 		let newSpace = space.cloneNode(true);
+// 		form.appendChild(newSpace);
+	
+// 	}
+// }
+
+//24.35 Дана кнопка. Сделайте так, чтобы по нажатию на эту кнопку, скрывался родитель этой кнопки.
+
+// function removeForm(){
+// 	let form = document.getElementById('form');
+// 	let button = document.getElementById('but');
+// 	form.remove();
+// }
+
+// На величину границы
+
+//25.1 Для решения задач данного блока вам понадобятся следующие методы: clientTop, clientLeft.
+// Дан элемент #elem с границами. По нажатию на кнопку выведите толщину его верхней границы.
+
+// function itsTop(){
+// 	let block = document.getElementById('block');
+// 	alert(block.clientTop);
+// }
+
+// Дан элемент #elem с границами. По нажатию на кнопку выведите толщину его левой границы.
+
+// window.onload = function(){
+	
+// 	let block = document.getElementById('block');
+// 	let button = document.getElementById('button');
+// 	button.addEventListener('click', itsLeft);
+// }
+
+
+// function itsLeft(){
+// 	alert(block.clientLeft);
+// }
+
+//25.3 Дан элемент #elem с границами. По нажатию на кнопку выведите его полную ширину с учетом границы и padding.
+
+// window.onload = function(){
+	
+// 	let block = document.getElementById('block');
+// 	let button = document.getElementById('button');
+// 	button.addEventListener('click', itsLeft);
+// }
+
+
+// function itsLeft(){
+// 	alert(block.offsetWidth);
+// }
+
+//25.5Дан элемент #elem с границами. По нажатию на кнопку выведите его полную высоту с учетом границы и padding.
+
+// window.onload = function(){
+	
+// 	let block = document.getElementById('block');
+// 	let button = document.getElementById('button');
+// 	button.addEventListener('click', itsLeft);
+// }
+
+
+// function itsLeft(){
+// 	alert(block.offsetHeight);
+// }
+
+//25.6 Дан элемент #elem с границами. По нажатию на кнопку выведите его полную высоту без учета границы, но с padding.
+
+// window.onload = function(){
+	
+// 	let block = document.getElementById('block');
+// 	let button = document.getElementById('button');
+// 	button.addEventListener('click', itsLeft);
+// }
+
+
+// function itsLeft(){
+// 	alert(block.offsetWidth);
+// }
+
+//25.7 Дан элемент #elem. Получите его ширину и высоту, без учета границы и padding.
+
+// function ComputedStyle(){
+
+// 	let block = document.getElementById('block');
+// 	console.log(block.tagName);
+// 	let style = getComputedStyle(block);
+// 	alert('width: ' + style.width + ';');
+//  alert('height: ' + style.height + ';');
+// }
+
+//25.8-9 Дан элемент #elem с вертикальной полосой прокрутки. По нажатию на кнопку выведите на сколько элемент прокручен сверху.
+
+// function scrolled(){
+
+// 	let block = document.getElementById('block');
+// 	console.log(block.tagName);
+// 	alert('scrollheight is ' + block.scrollHeight + 'px;');
+//  alert('scrollWidth is ' + block.scrollWidth + 'px;');
+// }
+
+//25.10-11 and 12-13 Дан элемент #elem с вертикальной полосой прокрутки. По нажатию на кнопку выведите на сколько элемент прокручен сверху.
+
+// function scrolledUp(){
+
+// 	let block = document.getElementById('block');
+// 	console.log(block.tagName);
+// 	alert(block.scrollTop);
+// 	block.scrollTop = 0;	
+	
+// }
+
+// function scrolledLeft(){
+
+// 	let block = document.getElementById('block');
+// 	console.log(block.tagName);
+// 	alert(block.scrollLeft);
+// 	block.scrollLeft = 1000;
+// }
+
+//25.14 Дан элемент #elem с вертикальной полосой прокрутки. По нажатию на кнопку прокрутите его до позиции 100px от нижнего края элемента
+
+// function scrollUp(){
+
+// 	let block = document.getElementById('block');
+// 	console.log(block.scrollHeight);
+// 	var total_height = block.scrollHeight;
+// 	var needed_height = total_height - 100;
+// 	block.scrollTop = needed_height;
+// 	console.log(block.scrollTop);
+// }
+
+// //25.15-16 Дана страница с вертикальной полосой прокрутки. По нажатию на кнопку узнайте на сколько страница прокручена по вертикали. Показать решение.
+
+//  Дана страница с горизонтальной полосой прокрутки. По нажатию на кнопку узнайте на сколько страница прокручена по горизонтали. Показать решение.
+	
+// function getOffset(){
+
+// 	alert('pageXOffset = ' + pageXOffset + '; ' + 'pageYOffset = ' + pageXOffset + ';');
+
+// }
+
+// 25.17-18 Дана страница с горизонтальной и вертикальной полосами прокрутки. По нажатию на кнопку прокрутите ее в точку 300px слева, 500px сверху.
+// 	Дана страница с вертикальной полосой прокрутки. По нажатию на кнопку прокрутите на 300px вниз от текущего положения.
+
+// function moveCor(){
+
+// 	window.scrollTo(300, 500);
+
+// }
+
+// function movePix(){
+
+// 	window.scrollBy(0, 300);
+
+// }
+
+// 25.19-22 По нажатию на кнопку прокрутите страницу до самого низа. Показать решение.
+
+//  По нажатию на кнопку прокрутите страницу на 400px от текущего положения. Показать решение.
+
+//  По нажатию на кнопку проверьте, прокручена ли страница до самого низа. Если это так - прокрутите ее в положение 100px от верхнего края. Показать решение.
+
+//  Дан элемент #elem. По клику на него увеличьте его ширину и высоту в 2 раза. Показать решение.
+
+// function moveDown(){
+	
+// 	let body = document.documentElement;
+// 	let height = body.scrollHeight;
+// 	console.log('offset height: ' + height);
+// 	window.scrollTo(0, height);
+
+// }
+
+// function movePix400(){
+
+// 	window.scrollBy(400, 0);
+
+// }
+
+// function moveTop100px(){
+
+// 	let body = document.documentElement;
+// 	console.log('body.scrollHeight: ' + body.scrollHeight + ';  body.pageYOffset: ' + window.pageYOffset + '; body.clientHeight: ' + body.clientHeight + '; body.scrollTop: ' + body.scrollTop + '; body.offsetHeight: ' + body.offsetHeight);
+// 	let scrHeight = body.scrollHeight;
+// 	let scrTop = body.scrollTop;
+// 	let clHeight =  body.scrollHeight - body.scrollTop;
+// 	console.log('body.scrollHeight - body.scrollTop = ' + clHeight);
+	
+// 	if(scrHeight - scrTop == clHeight){
+
+// 		window.scrollTo(0, 100);
+
+// 	}
+	
+// }
+
+// function changeSize(){
+
+// 	let elem = document.getElementById('elem');
+// 	let elemHeight = elem.offsetHeight;
+// 	let elemWidth = elem.offsetWidth;
+
+// 	console.log('elem.offsetHeight: ' + elem.offsetHeight + '  elem.offsetWidth: ' + elem.offsetWidth);
+	
+// 	elem.style.width = elemWidth*2 + 'px';
+// 	elem.style.height = elemHeight*2 + 'px';
+
+// 	console.log('new elem.offsetHeight: ' + elem.offsetHeight + '  new elem.offsetWidth: ' + elem.offsetWidth);
+
+// }
+
+// 26.1-3 Дана кнопка. По нажатию на эту кнопку выведите высоту окна браузера. Показать решение.
+
+//  Дана кнопка. По нажатию на эту кнопку прокрутите окно браузера до самого низа. Показать решение.
+
+//  Дана кнопка. По нажатию на эту кнопку узнайте, есть ли у окна браузера вертикальная прокрутка. Показать решение.
+
+
+function getHeight(){
+
+	let body = document.documentElement;
+
+	alert(body.clientHeight + 'px');
+
+}
+
+window.onload = function(){
+
+	let button2 = document.getElementById('button2');
+	button2.addEventListener('click', scrollDown);
+	let button3 = document.getElementById('button3');
+	button3.addEventListener('click', getTop);
+}
+
+function scrollDown(){
+
+	let body = document.documentElement;
+	body.scrollTo(0, body.scrollHeight); 
+}
+
+function getTop(){
+
+	let body = document.documentElement;
+	(body.scrollTop == 0)? alert('This brouser has no any scroll now!') : alert('The scroll is ' + body.scrollTop + 'px');
 }
