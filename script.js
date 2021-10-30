@@ -1499,30 +1499,468 @@ for(let i = 0; i < arr.length; i++){
 //  Дана кнопка. По нажатию на эту кнопку узнайте, есть ли у окна браузера вертикальная прокрутка. Показать решение.
 
 
-function getHeight(){
+// function getHeight(){
 
-	let body = document.documentElement;
+// 	let body = document.documentElement;
 
-	alert(body.clientHeight + 'px');
+// 	alert(body.clientHeight + 'px');
 
-}
+// }
 
-window.onload = function(){
+// window.onload = function(){
 
-	let button2 = document.getElementById('button2');
-	button2.addEventListener('click', scrollDown);
-	let button3 = document.getElementById('button3');
-	button3.addEventListener('click', getTop);
-}
+// 	let button2 = document.getElementById('button2');
+// 	button2.addEventListener('click', scrollDown);
+// 	let button3 = document.getElementById('button3');
+// 	button3.addEventListener('click', getTop);
+// }
 
-function scrollDown(){
+// function scrollDown(){
 
-	let body = document.documentElement;
-	body.scrollTo(0, body.scrollHeight); 
-}
+// 	let body = document.documentElement;
+// 	body.scrollTo(0, body.scrollHeight); 
+// }
 
-function getTop(){
+// function getTop(){
 
-	let body = document.documentElement;
-	(body.scrollTop == 0)? alert('This brouser has no any scroll now!') : alert('The scroll is ' + body.scrollTop + 'px');
-}
+// 	let body = document.documentElement;
+// 	(body.scrollTop == 0)? alert('This brouser has no any scroll now!') : alert('The scroll is ' + body.scrollTop + 'px');
+// }
+
+// 26.1 Повторите поведение страницы по данному образцу:
+
+// let body = document.documentElement;
+// body.style.backgroundColor = 'white';
+// let div = document.createElement('div');
+// body.insertAdjacentElement('afterBegin', div);
+// div.style.backgroundColor = 'white';
+// div.style.width = body.offsetWidth;
+// div.style.height = body.offsetHeight;
+// let p = document.createElement('p');
+// div.insertAdjacentElement('afterBegin', p);
+// body.onmousemove = mouseMove;
+
+// function mouseMove(event){
+	
+// 	p.innerHTML = 'X: ' + event.clientX + '  Y: ' + event.clientY;
+
+// }
+
+//26.2 Повторите поведение страницы по данному образцу:
+
+// let body = document.documentElement;
+// body.style.backgroundColor = 'white';
+// let div = document.createElement('div');
+// body.insertAdjacentElement('afterBegin', div);
+// div.style.backgroundColor = 'white';
+// div.style.width = '50px';
+// div.style.height = '50px';
+// div.style.border = '5px solid red';
+// let p = document.createElement('p');
+// div.insertAdjacentElement('afterBegin', p);
+// body.onclick = divMove;
+
+// function divMove(event){
+
+// 	div.style.marginLeft = event.clientX + 'px';
+// 	div.style.marginTop = event.clientY + 'px';
+// }
+
+// /26.3 Повторите поведение страницы по данному образцу:
+
+// let body = document.documentElement;
+// body.style.backgroundColor = 'white';
+// let div = document.createElement('div');
+// body.insertAdjacentElement('afterBegin', div);
+// div.style.backgroundColor = 'white';
+// div.style.width = '100px';
+// div.style.height = '100px';
+// div.style.border = '2px solid red';
+// let p = document.createElement('p');
+// div.insertAdjacentElement('afterBegin', p);
+// body.onclick = divMove;
+
+// function divMove(event){
+// 	let width = parseInt(div.style.width)/2;
+// 	let height = parseInt(div.style.height)/2;
+// 	div.style.marginLeft = event.clientX - width + 'px';
+// 	div.style.marginTop = event.clientY - height + 'px';
+// }
+
+//26.4
+
+// window.onload = function (){
+
+// 	let txt = document.getElementById('text');
+// 	let code = document.getElementById('code');
+	
+// 	txt.onkeypress = funKey;
+	
+
+// }
+
+
+// function funKey(event){
+
+// 	let elem = event.keyCode;
+// 	code.innerHTML = elem;
+
+// }
+
+//26.5
+
+// window.onload = function (){
+
+// 	let text = document.getElementById('text');
+// 	let code = document.getElementById('code');
+// 	text.onkeypress = simbol;
+// }
+
+// function simbol(event){
+
+// 		let symbol = String.fromCharCode(event.keyCode);
+// 		code.innerHTML += symbol;
+// }
+
+// window.onload = function (){
+
+// 	let txt = document.getElementById('txt')
+
+// 	txt.onclick = ctrlFun;
+
+// }
+
+// function ctrlFun(event){
+
+// 	if (event.ctrlKey){
+
+// 		txt.style.color = 'red';
+
+// 	} else {
+
+// 		txt.style.color = 'white';
+// 	}
+
+// }
+
+// window.onload = function (){
+// 	 let txt = document.getElementById('txt');
+// 	 txt.onclick = newTxt;
+// }
+
+// function newTxt(event){
+
+// 	if (event.ctrlKey){
+		
+// 		txt.innerHTML = 'ctrlKey';
+	
+// 	}  
+	
+// 	else if(event.shiftKey){
+		
+// 		txt.innerHTML = 'shiftKey';
+	
+// 	} 
+	
+// 	else if(event.altKey){
+		
+// 		txt.innerHTML = 'altKey';
+	
+// 	}
+
+// 	else{
+
+// 		txt.innerHTML = 'По нажатию на кнопки Ctr, Alt или Shift кликните!';
+	
+// 	}
+
+// }
+
+// 26.8 Дан инпут. В него вводится текст и нажимается клавиша Enter (ее код имеет номер 13). Сделайте так, чтобы по нажатию Enter введенный текст попадал в абзац под инпутом, а содержимое инпута очищалось.
+
+// window.onload = function (){
+
+// 	let insert = document.getElementById('insert');
+// 	insert.onkeypress = writeOut;
+	
+// }
+
+// function writeOut(event){
+
+// 	let txt = document.getElementById('text');	
+
+// 		if(event.keyCode == 13){
+
+// 			txt.innerHTML = insert.value;
+// 			event.preventDefault();
+// 		}
+
+// 		console.log('event.keyCode: ' + event.keyCode);
+		
+// }
+
+//29 Работа с формами
+ 
+// 29.1 Дана форма с id="form". В ней даны инпуты, в них числа. Дана кнопка. По нажатию на эту кнопку получите форму по ее id, затем циклом переберите все инпуты в ней и найдите сумму чисел из этих инпутов.
+
+//let formElems = document.getElementById('form');
+
+// window.onload = function (){
+// 	let  button = document.querySelector('button');
+// 	button.addEventListener('click', function(){
+// 		// for(let i = 0; i < document.forms.length; i++){
+// 		// 	console.log(document.forms[i].id);
+// 		// }
+
+// 		let sum = 0;
+
+// 		for(form of  document.forms){
+// 			console.log(form.id);
+
+// 			for(input of  form.elements){
+// 				sum += parseInt(input.value);
+				
+// 			}
+
+// 			alert('Sum is : ' + sum);
+// 		}
+
+		
+
+		
+// 	})
+// }
+
+//29.2 На странице расположено несколько форм. В них есть инпуты, в инпутах числа. Дана кнопка. По нажатию на эту кнопку циклом переберите все формы на странице, затем циклом переберите все инпуты в каждой форме и найдите сумму чисел из всех этих инпутов.
+
+// window.onload = function (){
+// 	let  button = document.querySelector('button');
+// 	button.addEventListener('click', function(){
+// 		// for(let i = 0; i < document.forms.length; i++){
+// 		// 	console.log(document.forms[i].id);
+// 		// }
+
+// 		let sum = 0;
+
+// 		for(form of  document.forms){
+// 			console.log(form.id);
+
+// 			for(input of  form.elements){
+// 				sum += parseInt(input.value);
+				
+// 			}
+
+// 			console.log('Sum is : ' + sum);
+// 		}
+
+// 		alert('Sum is : ' + sum);s
+
+		
+// 	})
+// }
+
+// 29.3 Дан селект. Дан инпут. По изменению селекта выведите текст выбранного пункта в инпут.
+
+// window.onload = function (){
+// 	let select = document.querySelector('select');
+// 	let input = document.querySelector('input');
+// 	select.addEventListener('change', function (){
+// 		input.value = select[select.selectedIndex].text;
+// 		//input.value = select.value;
+// 		//input.value = select.selectedIndex;
+// 	});
+	
+// }
+
+//29.4 Дан селект. Дан инпут. Дана кнопка. Сделайте так, чтобы в инпут можно было ввести число, нажать на кнопку и в селекте становился выбранным пункт с этим номером.
+
+// window.onload = function (){
+// 	let select = document.querySelector('select');
+// 	let input = document.querySelector('input');
+// 	input.addEventListener('change', function (){
+		
+// 		let val = parseInt(input.value);
+		
+// if (val > 0 || val <= select.elements.length){
+
+// 	select.value = input.value;
+
+// }  
+		
+// 	});
+	
+// }
+
+//29.5 Дан селект со списком стран. Сделайте так, чтобы при выборе страны рядом появлялся еще и селект со списком городов из этой страны.
+//Задача у многих не получается, см. ее разбор https://youtu.be/hgT0mjZvV9s
+
+// let USA = ['', 'New York City', 'Los Angeles', 'Chicago', 'Houston', 'Philadelphia'];
+// let UK = ['', 'London', 'Birmingham', 'Glasgow', 'Liverpool', 'Manchester'];
+// let Canada = ['', 'Toronto', 'Montreal', 'Calgary', 'Ottawa', 'Edmonton'];
+// let Ierland = ['', 'Dublin', 'Cork', 'Derry', 'Limerick', 'Galway'];
+// let Australia = ['', 'Sydney', 'Melbourne', 'Brisbane', 'Perth', 'Adelaide'];
+
+// window.onload = function (){
+// 	let select1 = document.getElementById('select1');
+// 	select1.addEventListener('change', fun)
+// };
+
+// function fun(){
+// 	let select2 = document.getElementById('select2');
+// 	let label = document.getElementById('label');
+// 	select2.style.cssText = "visibility: visible;";
+// 	label.style.cssText = "visibility: visible;";
+	
+// 	if(select1.value == 1){
+// 		select2.length = 0;
+// 		console.log(USA);
+		
+// 		for(let i = 0; i < USA.length; i++){
+// 			select2.add(new Option(USA[i], 1 + i))
+		
+// 		}
+
+// 		select2.addEventListener('change', function(){
+
+// 			alert('country: ' + select1[select1.selectedIndex].innerHTML + ' city: ' + select2[select2.selectedIndex].innerHTML);
+// 			location.reload();
+// 		});
+		
+// 	}
+
+// 	else if(select1.value == 2){
+// 		select2.length = 0;
+// 		console.log(UK);
+
+// 		for(let i = 0; i < UK.length; i++){
+// 			select2.add(new Option(UK[i], 1 + i))
+			
+// 		}
+
+// 		select2.addEventListener('change', function(){
+
+// 			alert('country: ' + select1[select1.selectedIndex].innerHTML + ' city: ' + select2[select2.selectedIndex].innerHTML);
+// 			location.reload();
+// 		});
+// 	}
+
+// 	else if( select1.value == 3){
+// 		select2.length = 0;
+// 		console.log(Canada);
+
+// 		for(let i = 0; i < Canada.length; i++){
+// 			select2.add(new Option(Canada[i], 1 + i))
+		
+// 		}
+
+// 		select2.addEventListener('change', function(){
+
+// 			alert('country: ' + select1[select1.selectedIndex].innerHTML + ' city: ' + select2[select2.selectedIndex].innerHTML);
+// 			location.reload();
+// 		});
+// 	}
+
+// 	else if(select1.value == 4){
+// 		select2.length = 0;
+// 		console.log(Ierland);
+
+// 		for(let i = 0; i < Ierland.length; i++){
+// 			select2.add(new Option(Ierland[i], 1 + i))
+			
+// 		}
+// 		select2.addEventListener('change', function(){
+
+// 			alert('country: ' + select1[select1.selectedIndex].innerHTML + ' city: ' + select2[select2.selectedIndex].innerHTML);
+// 			location.reload();
+// 		});
+// 	}
+
+// 	else if(select1.value == 5){
+// 		select2.length = 0;
+// 		console.log(Australia);
+
+// 		for(let i = 0; i < Australia.length; i++){
+// 			select2.add(new Option(Australia[i], 1 + i))
+			
+// 		}
+
+// 		select2.addEventListener('change', function(){
+
+// 			alert('country: ' + select1[select1.selectedIndex].text + ' city: ' + select2[select2.selectedIndex].text);
+// 			location.reload();
+// 		});
+// 	}
+
+// 	else{
+// 		location.reload();
+// 	}
+// }
+
+//29.6 Даны 3 селекта: с днем, с месяцем и годом. Сделайте так, чтобы некорректную дату нельзя было выбрать.
+
+
+
+//28.1 Дан ul, в нем несколько li. Под ul сделайте кнопку, по нажатию на которую в конец ul будет добавляться новый li с текстом 'пункт'. 
+//Сделайте так, чтобы при клике на каждый li, ему в конец добавлялся '!'. 
+//Это должно работать и для вновь добавленных li. Задачу решите с помощью делегирования (то есть событие должно быть навешано на ul).
+
+// window.onload = function (){
+	
+// 	let ul = document.getElementById('ul');
+// 	let button = document.getElementById('button');
+	
+// 	button.addEventListener('click', function(event){
+		
+// 		let li = document.createElement('li');
+// 		li.innerHTML = 'пункт';
+// 		ul.appendChild(li);
+// 	});
+
+// 	ul.onclick = (event) => {
+// 		let i = document.createElement('i');
+// 		i.innerHTML = ' real';
+//         event.target.closest('li').appendChild(i);
+// 		event.target.closest('li').innerHTML += '!';
+// 	}
+	
+// }
+
+//28.2 Дана таблица с юзерами с двумя колонками: имя и фамилия. 
+//Под таблицей сделайте форму, с помощью которой можно будет добавить нового юзера в таблицу. 
+//Сделайте так, чтобы при клике на любую ячейку появлялся prompt, с помощью которого можно изменить текст ячейки. 
+//Задачу решите с помощью делегирования (то есть событие должно быть навешано на table).
+
+// window.onload = function (){
+
+// 	let button = document.querySelector('#button');
+// 	let table = document.querySelector('#table');
+// 	button.addEventListener('click', insertNewUser);
+// 	table.onclick = (event) => {
+
+// 		if(event.target.id != 'head'){
+
+// 			let change = prompt('Insert new data!');
+// 			event.target.closest('td').innerHTML = change;
+// 		}
+		
+// 	};
+	
+// }
+
+// function insertNewUser(event){
+
+// 	let name = document.querySelector('#name');
+// 	let surname = document.querySelector('#surname');
+// 	let table = document.querySelector('#table');
+
+// 	let tr = document.createElement('tr');
+// 	table.appendChild(tr);
+// 	let tdName = document.createElement('td');
+// 	tdName.innerHTML = name.value;
+// 	let tdSurname = document.createElement('td');
+// 	tdSurname.innerHTML = surname.value;
+// 	tr.appendChild(tdName);
+// 	tr.appendChild(tdSurname);
+// 	event.preventDefault();
+// }
+
