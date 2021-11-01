@@ -85,7 +85,7 @@
 		}
 	</style>
 </head>
-<body id="body">
+<html id="body">
 
 	<!--<form action="">
 		<fieldset>
@@ -1444,23 +1444,108 @@
 <!-- 31.6 Дан инпут. В него вводится ФИО через пробел. ФИО вводится с маленькой буквы. 
 	Сделайте так, чтобы по потери фокуса инпутом, введенные фамилия, имя и отчество автоматически стали записанными с большой буквы (в том же инпуте). -->
 
-<label for='name'>Write your full name here:</label><br><br>
+<!-- <label for='name'>Write your full name here:</label><br><br>
 <input name="Same"  type="text">
 
 <script>
 	let input = document.querySelector('input');
-	let str = '';
 	input.onblur = () => {
-	let fullName = input.value.split(' ');
-	for(name of fullName){
-		let word = name.split(''); 
-		word[0] =  word[0].toUpperCase();
-		name =  word.join('');
-	}
+		let names = input.value.split(' ');
+		
+		for (let i = 0; i < names.length; i++){
+			names[i] = names[i].split('');
+			names[i][0] = names[i][0].toUpperCase();
+			names[i] = names[i].join('');
+			console.log(names[i]);
+			
+		}
 
-	fullName.join(' ');
-	input.value = fullName;
+		input.value = names.join(' ');
+		console.log(input.value);
+
 }
 	
-</script>
+</script> -->
 
+<!-- 31.5 Дан инпут. В него вводится ФИО через пробел. По потери фокуса запишите фамилию, имя и отчество в отдельные инпуты. -->
+
+<!-- <label for='name'>Write your full name here:</label><br>
+<input name="name"  id="input" type="text"><br><br>
+<input name="name" class="input" type="text"><br><br>
+<input name="name" class="input" type="text"><br><br>
+<input name="name" class="input" type="text"><br><br>
+
+<script>
+	let input = document.querySelector('#input');
+	let inserts = document.querySelectorAll('.input');
+	console.log(inserts);
+	input.onblur = () => {
+		let names = input.value.split(' ');
+		for (let i = 0; i < names.length; i++){
+			inserts[i].value = names[i];
+			console.log(inserts[i].value);
+		}		
+	}
+
+</script> -->
+
+<!-- 31.7 Дан инпут. В него вводится текст. По потери фокуса узнайте количество слов в этом тексте. -->
+
+<!-- <input name="words"  id="input" type="text"><br><br>
+
+<script>
+	let input = document.querySelector('#input');
+	console.log(input);
+	input.onblur = () => {
+		let words = input.value.split(' ');
+		console.log(words);
+		let wordsNum = 0;
+		for(let i = 0; i < words.length; i++){
+			
+			wordsNum += i;
+		}
+			alert(wordsNum);
+		}
+		
+</script> -->
+<!-- 31.8 Дан инпут. В него вводится текст. По потери фокуса узнайте количество символов в самом длинном слове в этом тексте. -->
+
+<!-- <input name="words"  id="input" type="text"><br><br>
+
+<script>
+	let input = document.querySelector('#input');
+	console.log(input);
+	input.onblur = () => {
+		let words = input.value.split(' ');
+		console.log(words);
+		let lettersNum = 0;
+		let long = '';
+		for(let i = 0; i < words.length; i++){
+			let word = words[i].split('');
+			if(word.length > lettersNum){
+				lettersNum = word.length;
+				long = word.join('');
+				
+			}			
+		}
+			alert(lettersNum + ' ' + long);
+		}
+		
+</script> -->
+
+<!-- 31.9 Дан инпут. В него вводится дата в формате 31.12.2016. По потери фокуса в этом же инпуте поставьте эту дату в формате 2016-12-31 -->
+
+<!-- <input name="words"  id="input" type="text"><br><br>
+
+<script>
+	let input = document.querySelector('#input');
+	console.log(input);
+	input.onblur = () => {
+		let data = input.value.split('.');
+		console.log(data);
+		data = data.join('-');
+		input.value = data;
+		
+		}
+	
+</script> -->
