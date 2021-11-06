@@ -1,6 +1,6 @@
 
 <!DOCTYPE html>
-<html>
+<input>
 <head>
 	<meta charset="utf-8">
 	<title>Это заголовок тайтл</title>
@@ -85,7 +85,6 @@
 		}
 	</style>
 </head>
-<html id="body">
 
 	<!--<form action="">
 		<fieldset>
@@ -1549,3 +1548,51 @@
 		}
 	
 </script> -->
+
+<!-- 31.10 Дан инпут. В него вводится год рождения пользователя. По нажатию на кнопку выведите в абзац ниже сколько пользователю лет.  -->
+
+<!-- <input name="words"  id="input" type="text"><br><br>
+
+<script>
+	let input = document.querySelector('#input');
+	
+	input.onblur = () => {
+		let year = input.value;
+		console.log(year);
+		let date = new Date();
+		let birth = date.getFullYear() - year;
+		alert(birth + ' лет');
+		
+		}
+	
+</script> -->
+
+<!--31.11 Дан инпут. В него вводится дата в формате 31.12.2016. По потери фокуса узнайте день недели (словом), который приходится на эту дату. -->
+
+<!-- <input type="text">
+
+<script>
+	
+	let time = document.querySelector('input');
+
+	time.onblur = dayName;
+
+	function dayName(){
+		let data = time.value.split('.');
+		data = data.reverse();
+		data = data.join(',');
+		let date = new Date(data);
+		console.log(date);
+		let days = ['sun', 'mon', 'tue', 'wen', 'thu', 'fri', 'sut'];
+		let day = date.getDay();
+		alert(days[day]);
+	}
+
+</script> -->
+
+<!-- 31.12 Дан инпут. В него вводится слово. По нажатию на кнопку проверьте то, что это слово читается с начала и с конца одинаково (например, мадам). -->
+
+
+
+</body>
+</html>
