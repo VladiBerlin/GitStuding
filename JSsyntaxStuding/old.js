@@ -1791,7 +1791,7 @@ alert(arr + ' ');
 for(var i = 0; i <= arr.length; i++){
 
 	document.write(Math.pow(arr[i], 2)  + '<br><br>');
-}
+}*/
 
 //Дан массив с числами. Найдите среднее арифметическое его элементов (сумма элементов, делить на количество).
 
@@ -1814,6 +1814,6 @@ for(var i = 0; i < arr.length; i++){
 
 		num /= arr.length;
 
-document.write(num);*/
+document.write(num);
 
 

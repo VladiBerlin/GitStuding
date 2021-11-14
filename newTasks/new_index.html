@@ -1,0 +1,1531 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>New index html</title>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <script src="newjs.js"></script>
+    <style type="text/css">
+
+		body {
+
+			background-color: rgb(39, 206, 81);
+			text-decoration-color: white;
+			color: white;
+		}
+		
+		input {
+
+			width: 20vw;
+			padding: 10px 2px 10px 2px;
+		}
+
+		label{
+
+			font-family: "Lucida Console", "Courier New", monospace;
+			font-size: 30px;
+
+		}
+
+		p {
+
+			font-family: "Lucida Console", "Courier New", monospace;
+			font-size: 30px;
+		}
+
+		.my-class{
+
+			color: red;
+		}
+
+		table, th, td{
+
+			border: 1px solid white;
+		}
+
+		div{
+			width: 70vw;
+			height: 30vh;
+			margin: 10px;
+		}
+
+		.www {
+			color: blue;
+		}
+
+		.rrr {
+			color: rgb(170, 18, 112);
+		}
+
+		.zzz {
+			font-size: 12px;
+		}
+
+		input{
+			width: 30vw;
+		}
+
+		select{
+			width: 10vw;
+		}
+	
+		button{
+			width: 30.6vw;
+		}
+	</style>
+    </head>
+<body>
+
+<!-- 31.1 Даны 3 инпута и кнопка. По нажатию на кнопку получите числа, стоящие в этих инпутах и запишите их сумму в четвертый инпут. -->
+
+<!-- <form id="form">
+	<input  type="text">
+	<input  type="text">
+	<input  type="text">
+	<input  type="text">
+	<button id="button">push</button>
+</form>
+
+<script>
+	let inputs = document.querySelector('#form');
+	let button = document.querySelector('#button');
+	button.onclick = valueSum;
+	
+	function valueSum(event){
+		
+		let result = parseInt(inputs.firstElementChild.value) + parseInt(inputs.firstElementChild.nextElementSibling.value) + parseInt(inputs.firstElementChild.nextElementSibling.nextElementSibling.value);
+		inputs.lastElementChild.previousElementSibling.value = result;
+		
+		console.log(inputs.lastElementChild.previousElementSibling);
+		event.preventDefault();
+	}
+</script> -->
+
+<!--31.2 Даны N инпутов с классом .num и кнопка. По нажатию на кнопку получите числа, стоящие в этих инпутах и запишите их сумму в абзац с id="result". -->
+
+
+	<!-- <input class="input" type="text"><br><br>
+	<input class="input" type="text"><br><br>
+	<input class="input" type="text"><br><br>
+	<input class="input" type="text"><br><br>
+	<button id="button">push</button><br><br>
+	<p id="result"></p>
+
+	<script>
+		let inputs = document.querySelectorAll('.input');
+		let result = document.querySelector('#result');
+		let button = document.querySelector('#button');
+		console.log(inputs);
+		button.addEventListener('click', sum);
+		
+		
+		function sum(event){
+			let sum = 0;
+			for (input of inputs){
+			sum += parseInt(input.value);
+			console.log(sum);
+			}
+			result.innerHTML = sum;
+			// event.preventDefault();
+		}
+		
+	</script> -->
+
+	<!--31.3  Дан инпут. В него вводится число. По потери фокуса найдите сумму цифр этого числа. -->
+
+	<!-- <input id="input" type="text">
+
+	<script>
+		let input = document.querySelector('#input');
+		input.onblur = () => {
+			let sum = 0;
+			let nums = input.value.split('');
+			for(num of nums){
+				sum += parseInt(num);
+
+			}
+
+			input.value = sum;
+			
+		}
+		
+	</script> -->
+
+<!-- 31.4 Дан инпут. В него вводятся числа через запятую. По потери фокуса найдите среднее арифметическое этих чисел (сумма делить на количество). -->
+
+<!-- <input id="input" type="text">
+
+	<script>
+		let input = document.querySelector('#input');
+		input.onblur = () => {
+			let sum = 0;
+			let divider = 1;
+			let nums = input.value.split('');
+			for(let i = 0; i < nums.length; i++){
+				sum += parseInt(nums[i]);
+				divider += i;
+
+			}
+
+			input.value = sum/divider;
+			
+		}
+		
+	</script> -->
+
+<!-- 31.6 Дан инпут. В него вводится ФИО через пробел. ФИО вводится с маленькой буквы. 
+	Сделайте так, чтобы по потери фокуса инпутом, введенные фамилия, имя и отчество автоматически стали записанными с большой буквы (в том же инпуте). -->
+
+<!-- <label for='name'>Write your full name here:</label><br><br>
+<input name="Same"  type="text">
+
+<script>
+	let input = document.querySelector('input');
+	input.onblur = () => {
+		let names = input.value.split(' ');
+		
+		for (let i = 0; i < names.length; i++){
+			names[i] = names[i].split('');
+			names[i][0] = names[i][0].toUpperCase();
+			names[i] = names[i].join('');
+			console.log(names[i]);
+			
+		}
+
+		input.value = names.join(' ');
+		console.log(input.value);
+
+}
+	
+</script> -->
+
+<!-- 31.5 Дан инпут. В него вводится ФИО через пробел. По потери фокуса запишите фамилию, имя и отчество в отдельные инпуты. -->
+
+<!-- <label for='name'>Write your full name here:</label><br>
+<input name="name"  id="input" type="text"><br><br>
+<input name="name" class="input" type="text"><br><br>
+<input name="name" class="input" type="text"><br><br>
+<input name="name" class="input" type="text"><br><br>
+
+<script>
+	let input = document.querySelector('#input');
+	let inserts = document.querySelectorAll('.input');
+	console.log(inserts);
+	input.onblur = () => {
+		let names = input.value.split(' ');
+		for (let i = 0; i < names.length; i++){
+			inserts[i].value = names[i];
+			console.log(inserts[i].value);
+		}		
+	}
+
+</script> -->
+
+<!-- 31.7 Дан инпут. В него вводится текст. По потери фокуса узнайте количество слов в этом тексте. -->
+
+<!-- <input name="words"  id="input" type="text"><br><br>
+
+<script>
+	let input = document.querySelector('#input');
+	console.log(input);
+	input.onblur = () => {
+		let words = input.value.split(' ');
+		console.log(words);
+		let wordsNum = 0;
+		for(let i = 0; i < words.length; i++){
+			
+			wordsNum += i;
+		}
+			alert(wordsNum);
+		}
+		
+</script> -->
+<!-- 31.8 Дан инпут. В него вводится текст. По потери фокуса узнайте количество символов в самом длинном слове в этом тексте. -->
+
+<!-- <input name="words"  id="input" type="text"><br><br>
+
+<script>
+	let input = document.querySelector('#input');
+	console.log(input);
+	input.onblur = () => {
+		let words = input.value.split(' ');
+		console.log(words);
+		let lettersNum = 0;
+		let long = '';
+		for(let i = 0; i < words.length; i++){
+			let word = words[i].split('');
+			if(word.length > lettersNum){
+				lettersNum = word.length;
+				long = word.join('');
+				
+			}			
+		}
+			alert(lettersNum + ' ' + long);
+		}
+		
+</script> -->
+
+<!-- 31.9 Дан инпут. В него вводится дата в формате 31.12.2016. По потери фокуса в этом же инпуте поставьте эту дату в формате 2016-12-31 -->
+
+<!-- <input name="words"  id="input" type="text"><br><br>
+
+<script>
+	let input = document.querySelector('#input');
+	console.log(input);
+	input.onblur = () => {
+		let data = input.value.split('.');
+		console.log(data);
+		data = data.join('-');
+		input.value = data;
+		
+		}
+	
+</script> -->
+
+<!-- 31.10 Дан инпут. В него вводится год рождения пользователя. По нажатию на кнопку выведите в абзац ниже сколько пользователю лет.  -->
+
+<!-- <input name="words"  id="input" type="text"><br><br>
+
+<script>
+	let input = document.querySelector('#input');
+	
+	input.onblur = () => {
+		let year = input.value;
+		console.log(year);
+		let date = new Date();
+		let birth = date.getFullYear() - year;
+		alert(birth + ' лет');
+		
+		}
+	
+</script> -->
+
+<!--31.11 Дан инпут. В него вводится дата в формате 31.12.2016. По потери фокуса узнайте день недели (словом), который приходится на эту дату. -->
+
+<!-- <input type="text">
+
+<script>
+	
+	let time = document.querySelector('input');
+
+	time.onblur = dayName;
+
+	function dayName(){
+		let data = time.value.split('.');
+		data = data.reverse();
+		data = data.join(',');
+		let date = new Date(data);
+		console.log(date);
+		let days = ['sun', 'mon', 'tue', 'wen', 'thu', 'fri', 'sut'];
+		let day = date.getDay();
+		alert(days[day]);
+	}
+
+</script> -->
+
+<!-- 31.12 Дан инпут. В него вводится слово. По нажатию на кнопку проверьте то, что это слово читается с начала и с конца одинаково (например, мадам). -->
+
+    <!-- <input type="text">
+    <script>
+        let text = document.querySelector('input');
+        text.onblur = () => {
+        let word = text.value.split('');
+        word = word.reverse();
+        word = word.join('');
+        console.log(word);
+        text.value = word;
+    }
+    </> -->
+    
+    <!--Дан инпут. В него вводится число. Проверьте по вводу, что это число содержит внутри себя цифру 3.-->
+
+    <!-- <input  type="text">
+    <script>
+        let input = document.querySelector('input');
+                input.onblur = () => {
+                    let num = input.value;
+                    alert(num.indexOf('3'));
+                }
+    </script> -->
+    <!-- Даны N абзацев и кнопка. По нажатию на кнопку запишите в конец каждого абзаца его порядковый номер. -->
+
+    <!-- <p></p><br>
+    <p></p><br>
+    <p></p><br>
+    <p></p><br>
+    <p></p><br>
+    <input type="submit">
+    <script>
+        let par = document.querySelectorAll('p');
+        let submit = document.querySelector('input');
+
+        submit.onclick = () => {
+            for (let i = 1; i < par.length; i++){
+            console.log(i);
+            par[i].innerHTML = i;
+            }
+        } -->
+
+        <!-- Даны N абзацев с числами. По нажатию на кнопку выведите эти числа в инпут через запятую в порядке возрастания. -->
+
+    <!-- <p>123</p><br>
+    <p>3456</p><br>
+    <p>23</p><br>
+    <p>988</p><br>
+    <p>67</p><br>
+    <input type="submit" id="submit"><br><br>
+    <input type="text" id="text">
+    <script>
+        let par = document.querySelectorAll('p');
+        let submit = document.querySelector('#submit');
+        let text = document.querySelector('#text');
+        let parArr =[];
+
+        submit.onclick = () => {
+            for (let i = 0; i < par.length; i++){
+            parArr.push( par[i].innerHTML)
+            }
+            
+            for(let i = 0; i < parArr.length; i++){
+                for(let n = 0; n < parArr.length -1 - i; n++){
+                    if(Number(parArr[n]) > Number(parArr[n + 1])){
+                        const change = parArr[n];
+                        parArr[n] = parArr[n + 1];
+                        parArr[n + 1] = change;
+
+                    }
+                }
+            }
+            
+            console.log(parArr);
+        }
+        
+        
+    </script> -->
+
+<!-- Даны ссылки. По загрузке страницы добавьте в конец каждой ссылки ее href в круглых скобках. -->
+
+<!-- <a href="http://google.com">google =</a><br>
+<a href="http://yandex.ru">yandex =</a><br>
+<a href="http://yahoo.com">yahoo  =</a><br>
+
+<script>
+
+   let link = document.querySelectorAll('a');
+   
+   console.log(link);
+
+     
+    for(let i = 0; i < link.length; i++){
+        link[i].innerHTML += ' (' + link[i].href + ') ';
+        console.log(link[i].href);
+    }
+     
+</script> -->
+
+<!-- Даны N абзацев с числами. По нажатию на любой абзац запишите в него квадрат числа, которое в нем находится. -->
+ 
+<!-- <p>2</p><br>
+<p>4</p><br>
+<p>5</p><br>
+<p>7</p><br>
+
+<script>
+    let par = document.querySelectorAll('p');
+    console.log(par);
+    for(let p of par){
+        p.onclick = double;
+        
+    }
+
+    function double(){
+        this.innerHTML = Math.pow(parseInt(this.innerHTML), 2);
+    }
+</script> -->
+
+<!-- Даны ссылки. По загрузке страницы, если ссылка начинается с http://, то добавьте ей в конец стрелку → (делается так: &rarr;) -->
+
+<!-- <a href="http://google.com">google =</a><br>
+<a href="yandex.ru">yandex =</a><br>
+<a href="http://yahoo.com">yahoo  =</a><br>
+
+<script>
+    let a = document.querySelectorAll('a');
+    for(let elem of a){
+        if(elem.href.indexOf('http://') == 0){
+            elem.innerHTML += ' →'; 
+        }
+    }
+</script> -->
+
+<!-- Даны картинки. По нажатию на любую картинку увеличьте ее в 2 раза. -->
+
+<!-- <img src="img/1.jpg"><br><br>
+<img src="img/4.jpg"><br><br>
+
+<script>
+    let img = document.querySelectorAll('img');
+    console.log(img)
+    for(let i = 0; i < img.length; i++){
+        console.log(img[i].src);
+        img[i].onclick = inc;
+               
+    }
+
+    function inc(){
+        console.log('width: ' + this.width + ' height: ' + this.height);
+        this.height = this.height * 2;
+    }
+</script> -->
+
+<!-- Даны картинки. По первому нажатию на любую картинку увеличьте ее в 2 раза. По второму нажатию - уменьшите обратно. -->
+
+<!-- <img src="img/1.jpg"><br><br>
+<img src="img/4.jpg"><br><br>
+
+<script>
+    let img = document.querySelectorAll('img');
+    console.log(img)
+    for(let i = 0; i < img.length; i++){
+        console.log(img[i].src);
+        img[i].onclick = inc;
+               
+    }
+
+    function inc(){
+        console.log('width: ' + this.width + ' height: ' + this.height);
+        this.height = this.height * 2;
+        this.onclick = inc2;
+    }
+
+    function inc2(){
+        this.height = this.height / 2;
+        this.onclick = inc;
+    }
+</script> -->
+
+<!-- Даны N картинок размера 30px. По нажатию на картинку под ними эта картинка появляется размером в 50px -->
+<!-- <div>
+    <img src="img/1.jpg"><br><br>
+    <img src="img/4.jpg"><br><br>
+</div>
+
+
+<script>
+    let div = document.querySelector('div');
+    let img = document.querySelectorAll('img');
+    console.log(img)
+    for(let i = 0; i < img.length; i++){
+        console.log(img[i].src);
+        img[i].onclick = inc;
+               
+    }
+
+    function inc(){
+        console.log('width: ' + this.width + ' height: ' + this.height);
+        let newElem = document.createElement('img');
+        newElem.height = '50';
+        newElem.src = this.src;
+        div.appendChild(newElem);
+        let br = document.createElement('br');
+        div.appendChild(br, br);
+    }  
+</script> -->
+
+<!-- Дан инпут. Реализуйте кнопочки +1, -1, которые будут увеличивать или уменьшать на 1 значение инпута. Сделайте так, чтобы это значение не могло стать меньше нуля. -->
+
+<!-- <form>
+    <input id="text" type="text"><br><br>
+    <input id="plus" value="plus 1" type="button"><br><br>
+    <input id="minus" value="minus 1" type="button"><br><br>
+</form>
+<script>
+    let text = document.querySelector('#text');
+    let plus = document.querySelector('#plus');
+    let minus = document.querySelector('#minus');
+    
+    text.onblur = () => {
+        console.log(text.value + (' ') + plus.value + (' ') + minus.value + (' '));
+    }
+
+    plus.onclick = () => {
+        text.value = parseInt(text.value) + 1;
+    }
+
+    minus.onclick = () => {
+        text.value = parseInt(text.value) - 1;
+    }
+    
+</script> -->
+
+<!-- Дан инпут. В него вводится число. По потери фокуса проверьте, что в нем лежит число от 1 до 100. Если это так - покрасьте инпут в зеленый цвет, а если не так - в красный. -->
+
+<!-- <input  type="text">
+
+<script>
+    let input = document.querySelector('input');
+    input.onblur = () =>{
+        if(parseInt(input.value) > 0 &&  parseInt(input.value) < 100){
+            input.style.color = 'green';
+            input.style.background = 'yellow';
+        }else{
+            input.style.background = 'blue';
+            input.style.cssText = 'color: red;';
+        }
+    }
+
+</script> -->
+
+<!-- Даны абзацы с числами. По нажатию на кнопку найдите абзац, в котором хранится максимальное число, и сделайте его красного цвета. -->
+
+<!-- <p>34</p><br>
+<p>45</p><br>
+<p>12</p><br>
+<p>115</p><br>
+<p>78</p><br><br>
+<button>push</button>
+
+<script>
+    let big = 0;
+    let j = 0;
+    let num = document.querySelectorAll('p');
+    let button = document.querySelector('button');
+    button.onclick = () => {        
+        
+        for(let i = 0; i < num.length; i++){
+               
+        if(parseInt(num[i].innerHTML) > big){
+            big = parseInt(num[i].innerHTML);
+            j = i;
+        }
+        
+    }
+
+    num[j].style.color = 'red';
+        
+    
+}
+</script> -->
+
+<!-- Дан инпут. Даны абзацы. Пусть в этот инпут записывается суммарное количество нажатий по этим абзацам. -->
+
+<!-- <p>45</p><br>
+<p>12</p><br>
+<p>115</p><br>
+<p>78</p><br><br>
+<input type="text"></input>
+
+<script>
+    let par = document.querySelectorAll('p');
+    let inp = document.querySelector('input');
+
+    for(let p of par){
+        p.onclick = () => {
+            inp.value = Number(inp.value) + 1;
+        }
+    }
+</script> -->
+
+<!-- Дан инпут с числом. Сделайте так, чтобы каждую секунду в нем появлялся квадрат того числа, которое в нем записано. -->
+
+<!-- <input  type="text" value="">
+
+<script>
+    let inp = document.querySelector('input');
+    inp.onblur = () => {
+        window.setInterval(num, 1000);
+    }
+
+    function num(){
+        inp.value = Math.pow(Number(inp.value), 2);
+    }
+</script> -->
+
+<!-- Дан инпут и кнопка. По нажатию на кнопку сгенерируйте случайную строку из 8-ми символов и запишите в инпут. -->
+
+<!-- <input  type="text"><br><br>
+<button>push</button>
+
+<script>
+    let input = document.querySelector('input');
+    let button = document.querySelector('button');
+    button.onclick = gen;
+
+    function gen(){
+        
+        let str = '1234567890qwertyuiopasdfghjklzxcvbnm';
+        let code = '';
+        console.log(str);
+        for(let i = 0; i < 8; i++){
+            let random = Math.floor(Math.random() * (str.length - 1  + 1) + 1);
+            console.log(random);
+            code += str.charAt(random);
+        }
+        
+        input.value = code;
+    }
+    
+</script> -->
+
+<!-- Модифицируйте предыдущую задачу так, чтобы был еще один инпут, в котором задается длина случайной строки. -->
+
+<!-- <input id="input"  type="text"><br><br>
+<input id="num" type="text"><br><br>
+<button>push</button>
+
+<script>
+    let input = document.querySelector('#input');
+    let num = document.querySelector('#num');
+    let button = document.querySelector('button');
+    button.onclick = gen;
+
+    function gen(){
+        
+        let str = '1234567890qwertyuiopasdfghjklzxcvbnm';
+        let code = '';
+        console.log(str);
+        for(let i = 0; i < Number(num.value); i++){
+            let random = Math.floor(Math.random() * (str.length - 1  + 1) + 1);
+            console.log(random);
+            code += str.charAt(random);
+        }
+        
+        input.value = code;
+    }
+    
+</script> -->
+
+<!-- Модифицируйте предыдущую задачу так, чтобы был еще один инпут, в котором задаются символы, 
+    из которых формируется эта случайна строка. 
+    Символы задаются без всяких разделитетей, в одну строку. -->
+
+<!-- <input id="input"  type="text"><br><br>
+<input id="num" type="text"><br><br>
+<input id="sym" type="text"><br><br>
+<button>push</button>
+
+<script>
+    let input = document.querySelector('#input');
+    let num = document.querySelector('#num');
+    let sym = document.querySelector('#sym');
+    let button = document.querySelector('button');
+    button.onclick = gen;
+
+    function gen(){
+        
+        let str = sym.value;
+        let code = '';
+        console.log(str);
+        for(let i = 0; i < Number(num.value); i++){
+            let random = Math.floor(Math.random() * (str.length - 1  + 1) + 1);
+            console.log(random);
+            code += str.charAt(random);
+        }
+        
+        input.value = code;
+    }
+    
+</script> -->
+
+<!-- Дан инпут. В него вводится число. 
+     По потери фокуса сделайте так, чтобы в абзаце ниже начал тикать обратный отсчет, начиная с введенного числа. 
+     Когда отсчет дойдет до нуля - он должен закончится. -->
+
+    <!-- <input  type="text"><br><br>
+    <p></p><br><br>
+
+    <script>
+        let inp = document.querySelector('input');
+        let par = document.querySelector('p');
+        let num = 0;
+        inp.onblur = () => {
+            num = Number(inp.value);
+            window.Id = window.setInterval(count, 1000)
+        }
+
+        function count(){
+            
+            console.log(num);
+            if(num == 0){
+                window.clearInterval(window.Id);
+            }else{
+                num -= 1;
+                par.innerHTML = num;
+            }                       
+            
+        }
+
+    </script> -->
+
+<!-- Дан абзац. Сделайте так, чтобы каждую секунду он менял свой цвет с красного на зеленый и наоборот. -->
+
+<!-- <p>Hello world!</p>
+
+<script>
+    let p = document.querySelector('p');
+
+    p.style.color = 'red';
+    window.setInterval(color, 2000);
+
+    function color(){
+        if(p.style.color == 'red'){
+            p.style.color = 'green';
+        }else{
+            p.style.color = 'red';
+        }
+    }
+</script> -->
+
+<!-- Дан абзац. Дан массив цветов ['red', 'green', 'blue']. 
+    Сделайте так, чтобы каждую секунду абзац менял свой цвет на определенное значение их массива: сначала 'red', потом 'green' и так далее. 
+    Как только цвета в массиве закончатся - все начнется сначала. Количество цветов в массиве может быть любым. -->
+
+<!-- <p>Hello world!</p>
+
+<script>
+    let p = document.querySelector('p');
+
+    let arr = ['red', 'green', 'yellow', 'blue', 'white'];
+    let num = 0;
+    window.setInterval(color, 2000);
+
+    function color(){     
+            num += 1;
+            if(num == arr.length){
+                num = 0;
+                p.style.color = arr[num];
+            }else{
+                p.style.color = arr[num];
+            }
+        }
+</script> -->
+
+<!--Дан абзац. Дан массив строк ['один', 'два', 'три']. 
+    Под абзацем ссылка 'следующая строка'. 
+    По заходу на страницу в абзаце должен стоять нулевой элемент этого массива, 
+    а по нажатию на ссылку - вставлятся следующий элемент. -->
+
+    <!-- <p></p><br><br>
+    <a>следующая строка</a>
+
+    <script>
+        let p = document.querySelector('p');
+        let a = document.querySelector('a');
+        let arr = ['один', 'два', 'три'];
+        let num = 0;
+        p.innerHTML = arr[num];
+        a.onclick = () => {
+            console.log(arr.length);
+            console.log(arr);
+            if(num == arr.length - 1){
+                num = 0;
+                p.innerHTML = arr[num];
+            }else{
+                num += 1;
+            p.innerHTML = arr[num];
+            }            
+        }
+    </script> -->
+
+<!-- Даны инпуты с числами. 
+    Произвольное количетсво, пусть три. 
+    В первый инпут запишите 1, через секунду во второй инпут запишите 2, 
+    еще через секунду в третий инпут 3, потом через секунду в первый инпут запишите 4, 
+    во второй 5 и так далее до бесконечности. -->
+
+    <!-- <input id="1" type="text"><br><br>
+    <input id="2" type="text"><br><br>
+    <input id="3" type="text"><br><br>
+
+    <script>
+        let input = document.querySelectorAll('input');
+        let index = 0;
+        let num = 1;
+        window.setInterval(funNum, 1000);
+
+        function funNum(){
+            
+            if(index == input.length){
+                index = 0;
+                input[index].value = num;
+            }else{
+                input[index].value = num;
+                index++;
+                num++;
+            }
+
+        }
+    </script> -->
+
+<!--  Дана ссылка. Дан чекбокс. 
+По нажатию на ссылку меняйте состояние чекбокса с отмеченного на неотмеченное и наоборот. -->
+
+<!-- <input type="checkbox" name="checkbox" checked>
+<label for="checkbox">checkbox</label><br><br>
+<a>check</a><br><br>
+
+<script>
+    let input = document.querySelector('input');
+    let link = document.querySelector('a');
+    
+    link.onclick = changeBox;
+
+    function changeBox(){
+        if(input.checked === true){
+            input.removeAttribute('checked');
+        } else{
+            input.setAttribute('checked', 'checked');
+        }
+        
+    }
+
+</script> -->
+
+<!--  Спросите у пользователя какой язык (html, css, js, php) он знает с помощью радио кнопочек. 
+Выведите этот язык в абзац. -->
+
+<!-- <form>
+    <input type="radio" name="html">
+    <label for="html">html</label><br><br>
+    <input type="radio" name="css">
+    <label for="css">css</label><br><br>
+    <input type="radio" name="js">
+    <label for="js">js</label><br><br>
+    <input type="radio" name="php">
+    <label for="php">php</label><br><br>
+    <input id="submit" type="submit"><br><br>
+    <p>Я знаю язык(и) </p>
+</form>
+
+<script>
+    let inp = document.querySelectorAll('input');
+    let par =document.querySelector('p');
+    let button =document.querySelector('#submit');
+    let str = [];
+    console.log(inp);
+    button.onclick = check;  
+    
+
+    function check(event){
+        for(let elem of inp){
+            if(elem.checked == true){
+                str.push(elem.name);
+            }
+        }
+        str.join(', ');
+        par.innerHTML += str;
+        event.preventDefault();
+    }
+</script> -->
+
+<!-- <form>
+    <input type="radio" name="html">
+    <label for="html">html</label><br><br>
+    <input type="radio" name="css">
+    <label for="css">css</label><br><br>
+    <input type="radio" name="js">
+    <label for="js">js</label><br><br>
+    <input type="radio" name="php">
+    <label for="php">php</label><br><br>
+    <p>Я знаю язык(и) </p>
+</form>
+
+<script>
+    let inp = document.querySelectorAll('input');
+    let par =document.querySelector('p');
+    let arr = [];
+    for(let i = 0; i < inp.length; i++){
+        inp[i].onclick = fun;
+    }
+
+    function fun(){
+        if(this.checked){
+            if(arr.indexOf(this.name) != -1){
+                this.removeAttribute('checked', 'checked');
+                arr.pop(arr[arr.indexOf(this.name)]);
+                arr.join(', ');
+                par.innerHTML += arr;
+            } else if(arr.indexOf(this.name) == -1){
+                arr.push(this.name);
+                arr.join(', ');
+                par.innerHTML += arr;
+            }        
+        } 
+    } 
+</script> -->
+
+<!-- Дан чекбокс. Дан инпут. 
+    Сделайте так, что если чекбокс отмечен - инпут видимый, если не отмечен - не видимый. -->
+
+<!-- <input id="text"  type="text"><br><br>
+<input id="checkbox" type="checkbox">
+<lable for="checkbox">checkbox</lable><br><br>
+
+<script>
+    let text = document.querySelector('#text');
+    let checkbox = document.querySelector('#checkbox');
+    text.style.visibility = 'hidden';
+    checkbox.onclick = check;
+    function check(){
+        if(checkbox.checked){
+            text.style.visibility = 'visible';
+        }else{
+            text.style.visibility = 'hidden'; 
+        }
+    }
+</script> -->
+
+<!-- Даны чекбоксы. 
+    Под каждым чекбоксом размещен абзац. 
+    Сделайте так, что если чекбокс отмечен - соответствующий абзац видимый, 
+    а если не отмечен - не видимый. -->
+
+<!-- <lable for="checkbox">checkbox</lable>
+<input id="checkbox" type="checkbox" onclick="check()"><br><br>
+<p>Hello world!</p><br><br>
+<lable for="checkbox">checkbox</lable>
+<input id="checkbox" type="checkbox" onclick="check()"><br><br>
+<p>Hello world!</p><br><br>
+<lable for="checkbox">checkbox</lable>
+<input id="checkbox" type="checkbox" onclick="check()"><br><br>
+<p>Hello world!</p><br><br>
+
+<script>
+    let text = document.querySelectorAll('p');
+    for(let i = 0; i < checkbox.length; i++){
+        text[i].style.visibility = 'hidden';
+    }
+    
+    function check(){
+        let checkbox = document.querySelectorAll('#checkbox');
+        for(let i = 0; i < checkbox.length; i++){
+            if(checkbox[i].checked){
+                text[i].style.visibility = 'visible';
+            }else{
+                text[i].style.visibility = 'hidden';
+            }
+        }
+    }
+    
+</script> -->
+
+<!-- Дан инпут. 
+     Даны li. В инпут пишется номер. 
+     Сделайте так, чтобы по вводу числа, li с заданным номером покрасился в красный цвет. -->
+
+<!-- <input type='text'><br><br>
+<ol>
+    <li>Hello world!</li>
+    <li>Hello world!</li>
+    <li>Hello world!</li>
+    <li>Hello world!</li>
+    <li>Hello world!</li>
+    <li>Hello world!</li>
+</ol>
+<script>
+    let input = document.querySelector('input');
+    let list = document.querySelectorAll('li');
+    input.addEventListener('blur', check);
+
+    function check(){
+            let num = Number(input.value) - 1;
+            console.log(num);
+            list[num].style.color = 'red';
+    }
+</script> -->
+
+<!-- Дан абзац. 
+Даны чекбоксы 'перечеркнуть', 'сделать жирным', 'сделать красным'. 
+Если соответствующий чекбокс отмечен - заданное действие происходит с абзацем (становится красным, например). 
+Если чекбоксу снять отметку - действие отменяется. -->
+
+<!-- <p>Hello world!</p><br><br>
+<input id="ch1" name="ch1" type="checkbox">
+<label for="ch1">перечеркнуть</label><br>
+<input id="ch2" name="ch2" type="checkbox">
+<label for="ch2">сделать жирным</label><br>
+<input id="ch3" name="ch3" type="checkbox">
+<label for="ch3">сделать красным</label><br>
+
+<script>
+    let input = document.querySelectorAll('input');
+    let span =  document.querySelector('p');
+    for(let i = 0; i < input.length; i++){
+        input[i].onclick = fun;
+    }
+
+    function fun(){
+        console.log(span);
+        let text = span.innerHTML;
+        if(this.checked){
+            if(this.id == "ch1"){
+                span.innerHTML = '<s>' + span.innerHTML + '</s>';
+            }
+            if(this.id == "ch2"){
+                span.innerHTML = '<b>' + span.innerHTML + '</b>';
+            }
+            if(this.id == "ch3"){
+                span.innerHTML = '<i>' + span.innerHTML + '</i>';
+            }
+        }         
+    }
+
+</script> -->
+
+<!-- <p>Hello world!</p><br><br>
+<input value="text-decoration:line-through;" id="ch1" name="ch1" type="checkbox">
+<label for="ch1">перечеркнуть</label><br>
+<input value="font-weight:bold;" id="ch2" name="ch2" type="checkbox">
+<label for="ch2">сделать жирным</label><br>
+<input value="color: red;" id="ch3" name="ch3" type="checkbox">
+<label for="ch3">сделать красным</label><br>
+
+<script>
+    let input = document.querySelectorAll('input');
+    let par = document.querySelector('p');
+
+    for(let i = 0; i < input.length; i++){
+        input[i].onclick = fun;
+    }
+
+    function fun(){
+        if(this.checked){
+            par.style.cssText += this.value;
+        }else{
+            par.style.cssText -= this.value;
+        }
+    }
+</script> -->
+
+<!-- Дан блок с кнопкой 'закрыть блок'. 
+По нажатию на эту кнопку блок должен исчезнуть. 
+Кнопка размещается внутри блока и должна исчезнуть вместе с ним. 
+Блоков может быть любое количество, каждый из них закрывает своя кнопка. -->
+
+<!-- <div style="margin: 20px; background-color: rgb(40, 154, 207);">
+    <button>push</button>
+</div>
+<div>
+</div>
+<div style="margin: 20px; background-color: rgb(206, 39, 206);">
+    <button>push</button>
+</div>
+
+<script>
+    let button = document.querySelectorAll('button');
+    for(let elem of button){
+        elem.onclick = hide;
+    }    
+    function hide(){
+        this.parentNode.style.visibility = 'hidden';
+    }
+</script> -->
+
+<!-- В инпут через запятую вводятся страны. 
+По нажатию на кнопку сделайте так, 
+чтобы эти страны записались в ul под инпутом (каждая страна отдельный li). -->
+
+<!-- <input  type="text"><br><br>
+<ul>
+
+</ul>
+
+<script>
+    let input = document.querySelector('input');
+    let ul = document.querySelector('ul');
+    input.onblur = list;
+    function list(){
+        let text = input.value;
+        console.log(text);
+        text = text.split(',');
+        for(let elem of text){
+            let li = document.createElement('li');
+            ul.appendChild(li);
+            li.innerHTML = elem;
+            console.log(elem);
+        }
+    }
+</script> -->
+
+<!-- На странице есть дивы. 
+    В них есть текст. 
+    Обойдите все дивы и обрежьте тот текст, который в них стоит так, 
+    чтобы он стал длиной 10 символов. И добавьте троеточие в конец обрезанного текста -->
+
+<!-- <div style="margin: 20px; background-color: rgb(40, 154, 207);">В них есть текст. 
+    Обойдите все дивы и обрежьте тот текст, который в них стоит так, 
+    чтобы он стал длиной 10 символов. И добавьте троеточие в конец обрезанного текста</div>
+<div style="margin: 20px; background-color: rgb(40, 154, 207);">В них есть текст. 
+    Обойдите все дивы и обрежьте тот текст, который в них стоит так, 
+    чтобы он стал длиной 10 символов. И добавьте троеточие в конец обрезанного текста</div>
+
+<script>
+    let div = document.querySelectorAll('div');
+    let commas = '...';
+    for(let elem of div){
+        let text = elem.innerHTML;
+        text = text.substr(0,10);
+        text = text.concat(commas);
+        elem.innerHTML = text;
+    }
+</script> -->
+
+<!-- Дана таблица с числами. 
+По нажатию на кнопку найдите ячейку,
+в которой хранится максимальное число, и сделайте ее фон красным. -->
+
+<!-- <table >
+    <tr>
+        <td>255</td>
+        <td>1</td>
+        <td>47</td>
+    </tr>
+    <tr>
+        <td>2</td>
+        <td>16</td>
+        <td>39</td>
+    </tr>
+    <tr>
+        <td>116</td>
+        <td>6</td>
+        <td>22</td>
+    </tr>
+</table><br><br>
+<button>push</button>
+
+<script>
+    let table = document.querySelectorAll('td');
+    let button = document.querySelector('button');  
+    button.addEventListener('click', findNum);   
+    function findNum(){       
+        let num = 0;
+        let index = 0;
+        for(let i = 0; i < table.length; i++){
+            
+            if(Number(table[i].innerHTML) > num){
+                
+                num = Number(table[i].innerHTML);
+                index = i;
+                console.log(num);                
+            }
+        }
+        table[index].style.backgroundColor = 'red';
+    }
+</script> -->
+
+<!-- Дана таблица с числами. 
+По нажатию на кнопку в инпут под таблицей выведите эти числа через запятую в порядке возрастания. -->
+
+<!-- <table>
+    <tr>
+        <td>255</td>
+        <td>1</td>
+        <td>47</td>
+    </tr>
+    <tr>
+        <td>2</td>
+        <td>16</td>
+        <td>39</td>
+    </tr>
+    <tr>
+        <td>116</td>
+        <td>6</td>
+        <td>22</td>
+    </tr>
+</table><br><br>
+<button>push</button><br><br>
+<p></p>
+
+<script>
+    let table = document.querySelectorAll('td');
+    let button = document.querySelector('button');
+    let p = document.querySelector('p');
+    let arr = [];  
+    button.addEventListener('click', sortNums); 
+    
+    function sortNums(){
+        for(let i = 0; i < table.length; i++){
+            arr.push(Number(table[i].innerHTML));
+        }
+        console.log(arr);
+        for(let j = 1; j < arr.length; j++){
+            for(let i = 0; i < arr.length - j; i++){
+                if(arr[i] > arr[i+1]){
+                    let num = arr[i];
+                    arr[i] = arr[i+1];
+                    arr[i+1] = num;
+                }
+            }
+        }
+        console.log(arr);
+        p.innerHTML = arr;
+    }
+    
+</script> -->
+
+<!-- Дана таблица с числами. 
+По нажатию на кнопку в последний ряд таблицы в каждую ячейку запишите сумму чисел в столбце таблицы, 
+расположенном над определенной ячейкой. -->
+
+<!-- <table >
+    <tr>
+        <td>255</td>
+        <td>1</td>
+        <td>47</td>
+    </tr>
+    <tr>
+        <td>2</td>
+        <td>16</td>
+        <td>39</td>
+    </tr>
+    <tr>
+        <td>116</td>
+        <td>6</td>
+        <td>22</td>
+    </tr>
+    <tr>
+        <td></td>
+        <td></td>
+        <td></td>
+    </tr>
+</table><br><br>
+<button>push</button><br><br> -->
+
+<!-- <script>
+    let table = document.querySelectorAll('td');
+    let button = document.querySelector('button');
+    button.addEventListener('click', sumNums);
+
+    function sumNums(){
+        table[9].innerHTML = Number(table[0].innerHTML) + Number(table[3].innerHTML) + Number(table[6].innerHTML);
+        table[10].innerHTML = Number(table[1].innerHTML) + Number(table[4].innerHTML) + Number(table[7].innerHTML);
+        table[11].innerHTML = Number(table[2].innerHTML) + Number(table[5].innerHTML) + Number(table[8].innerHTML);
+    }
+</script> -->
+
+<!-- <script>
+    let table = document.querySelectorAll('tr');
+    let button = document.querySelector('button');
+    button.addEventListener('click', sumNums);
+
+    function sumNums(){
+        for(let i = 0; i < table.length -1; i++){
+            for(let j = 0; j < table[i].children.length; j++){
+                table[table.length-1].children[j].innerHTML = Number(table[table.length-1].children[j].innerHTML) + Number(table[i].children[j].innerHTML);
+            }
+        }
+        
+    }
+</script> -->
+
+<!-- Дана таблица с числами. 
+По нажатию на ячейку она активируется и становится красного цвета. Активировать можно много ячеек. 
+Под таблицей кнопка. По нажатию по этой кнопке в абзац ниже выведите сумма активированных ячеек. 
+Реализуйте кнопку 'сбросить активированные ячейки'. -->
+
+<!-- <table >
+    <tr>
+        <td>255</td>
+        <td>1</td>
+        <td>47</td>
+    </tr>
+    <tr>
+        <td>2</td>
+        <td>16</td>
+        <td>39</td>
+    </tr>
+    <tr>
+        <td>116</td>
+        <td>6</td>
+        <td>22</td>
+    </tr>
+</table><br><br>
+<button id="button">push</button><br><br>
+<button id="reset">reset</button><br><br>
+<p></p>
+<script>
+    let table = document.querySelectorAll('td');
+    let button = document.querySelector('#button');
+    let reset = document.querySelector('#reset');
+    let p = document.querySelector('p');
+    for(let i = 0; i < table.length; i++){
+        table[i].addEventListener('click', selectTd);
+    }
+    let num = 0;
+    button.addEventListener('click', sumNums);
+    reset.addEventListener('click', resetTd);
+
+
+    function selectTd(){
+        this.style.backgroundColor = 'red';
+        num += Number(this.innerHTML);
+    }
+
+    function sumNums(){
+        p.innerHTML = 'The sum of active cells: ' + num;
+    }
+
+    function resetTd(){
+        for(let i = 0; i < table.length; i++){
+        table[i].style.backgroundColor = 'rgb(39, 206, 81)';
+        num = 0;
+        p.innerHTML = '';
+    }
+    }
+</script> -->
+
+<!-- Дана таблица. 
+По нажатию на ячейку в ней появляется инпут с содержимым этой ячейки и кнопка сохранить. 
+Можно поредактировать текст в инпуте, сохранить - и текст ячейки поменяется. -->
+
+<!-- <table >
+    <tr>
+        <td>255</td>
+        <td>1</td>
+        <td>47</td>
+    </tr>
+    <tr>
+        <td>2</td>
+        <td>16</td>
+        <td>39</td>
+    </tr>
+    <tr>
+        <td>116</td>
+        <td>6</td>
+        <td>22</td>
+    </tr>
+</table><br><br>
+    
+<script>
+    let table = document.querySelectorAll('td');
+    let input = document.createElement('input');
+    input.setAttribute('type', 'text');
+    let button = document.querySelector('#button');
+    let data = '';
+    for(let i = 0; i < table.length; i++){
+        table[i].addEventListener('click', selectTd);
+    }
+    input.addEventListener('blur', inputCell);
+    
+
+    function selectTd(){
+        this.parentNode.insertBefore(input, this.nextElementSibling);
+        data = this.innerHTML;
+        input.value = data;
+        this.style.display = 'none';
+              
+    }
+
+    function inputCell(){
+            data = input.value;
+            input.previousElementSibling.innerHTML = data;
+            input.previousElementSibling.style.display = "block";
+            input.parentNode.removeChild(input);
+        }
+</script> -->
+
+<!-- Реализуйте раскрывающийся список. По умолчанию есть список стран (ul), 
+    по нажатию на страну внутри li со страной появляется список городов. -->
+
+<!-- <ul id="countries">
+    <li>USA</li>
+        <ol>
+            <li>New-York</li>
+            <li>Washington</li>
+            <li>San-Francisko</li>
+        </ol>
+    <li>UK</li>
+    <ol>
+        <li>London</li>
+        <li>Liverpool</li>
+        <li>Birmingham</li>
+    </ol>
+    <li>Australia</li>
+    <ol>
+        <li>Sidney</li>
+        <li>Melnburn</li>
+        <li>Brisbane</li>
+    </ol>
+</ul>
+
+<script>
+let countr = document.querySelectorAll('#countries li');
+let cities = document.querySelectorAll('ol');
+for(let i = 0; i < cities.length; i++){
+    cities[i].style.display = 'none';
+}
+for(let i = 0; i < countr.length; i++){
+    countr[i].onclick = addCities;
+}
+
+function addCities(){
+    this.nextElementSibling.style.display = 'block';
+    this.onclick = hideCities;
+}
+
+function hideCities(){
+    this.nextElementSibling.style.display = 'none';
+    this.onclick = addCities;
+}
+</script> -->
+
+<!-- Даны два селекта. В первом находятся страны, во втором - города. 
+Сделайте так, чтобы когда выбирается определенная страна - в другом селекте появлялись города этой страны. 
+В абзац ниже пишите выбранную страну и город через запятую. -->
+
+<!-- <select id="countr">
+    <option></option>
+    <option>USA</option>
+    <option>UK</option>
+    <option>Australia</option>
+</select><br><br>
+<select id="cities">
+    
+</select><br><br>
+<p></p>
+
+<script>
+    let data = { 
+     'USA' : ['New-York', 'San-Francisco', 'Maiami'],
+     'UK' : ['London', 'Birminham', 'Liverpool'],
+     'Australia' : ['Sidnay', 'Brisbane', 'Melnburn'],};
+    let state = '';
+    let countr = document.querySelector('#countr');
+    let cities = document.querySelector('#cities');
+    let par = document.querySelector('p');
+    countr.addEventListener ('change', addCities);
+    cities.addEventListener ('change', addPar);
+
+    function addCities(){
+        cities.innerHTML = '';
+        state = countr.value;
+        for(let i = 0; i < data[countr.value].length; i++){
+            let opt = document.createElement('option');
+            opt.innerHTML = data[countr.value][i];
+            cities.appendChild(opt);                        
+        }
+        
+    }
+
+    function addPar(){
+        par.innerHTML += '';
+        par.innerHTML += ' ' + countr.value;
+        par.innerHTML += ', ' + cities.value;
+    }
+        
+</script> -->
+
+<!-- Сделайте селекты день, мес, год. 
+Сделайте так, чтобы не корректную дату нельзя было выбрать 
+(например, 30 февраля нельзя, а 30 марта можно или 29 февраля можно, но только в високосный год). -->
+
+<select id="days">  
+</select><br><br>
+<select id="month">
+</select><br><br>
+<select id="year">
+</select><br><br>
+
+</body>
+</html>
