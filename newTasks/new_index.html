@@ -1694,7 +1694,7 @@ function hideCities(){
 
 <!-- Дан список и кнопка. По нажатию на кнопку посортируйте пункты списка по возрастанию. -->
     
-<ul>
+<!-- <ul>
     <li>Moscow</li>
     <li>Paris</li>
     <li>New-York</li>
@@ -1727,6 +1727,36 @@ function hideCities(){
             li.innerHTML = data[i];
             ul.appendChild(li);
         }
+    }
+
+</script> -->
+
+<!-- Дан ряд ссылок. 
+Сделайте так, чтобы по нажатию на ссылку она становилась с красным фоном. 
+По нажатию на другую ссылку выделение первой ссылки снимается и выделяется та, на которую мы нажали. 
+В абзац ниже пишите текст активной ссылки. -->
+
+<a href="https://www.google.com">google</a><br>
+<a href="https://www.yandex.ru">yandex</a><br>
+<a href="https://www.rambler.ru">rambler</a><br>
+<a href="https://www.facebook.com">facebook</a><br>
+<p></p>
+
+<script>
+    let refs = document.querySelectorAll('a');
+    console.log(refs);
+    let par = document.querySelector('p');
+    for(let ref of refs){
+        ref.onclick = makeRed;
+    }
+
+    function makeRed(event){
+        for(let ref of refs){
+        ref.style.color = '';
+    }
+        this.style.color = 'red';
+        par.innerHTML = this.href;
+        event.preventDefault();
     }
 
 </script>
