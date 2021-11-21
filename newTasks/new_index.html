@@ -5,7 +5,6 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <script src="newjs.js"></script>
     <style type="text/css">
 
 		body {
@@ -1520,12 +1519,164 @@ function hideCities(){
 Сделайте так, чтобы не корректную дату нельзя было выбрать 
 (например, 30 февраля нельзя, а 30 марта можно или 29 февраля можно, но только в високосный год). -->
 
-<select id="days">  
-</select><br><br>
-<select id="month">
-</select><br><br>
-<select id="year">
-</select><br><br>
+<!-- <div id="calendar">
+    <select id="date"></select>
+	<select id="month">
+		<option value="0">Январь</option>
+		<option value="1">Февраль</option>
+		<option value="2">Март</option>
+		<option value="3">Апрель</option>
+		<option value="4">Май</option>
+		<option value="5">Июнь</option>
+		<option value="6">Июль</option>
+		<option value="7">Август</option>
+		<option value="8">Сентябрь</option>
+		<option value="9">Октябрь</option>
+		<option value="10">Ноябрь</option>
+		<option value="11">Декабрь</option>
+	</select>
+	<select id="year">
+        <option>2021</option>
+    </select>
+</div>
+
+<script>
+    let year = document.querySelector('#year');
+    let month = document.querySelector('#month');
+    let day = document.querySelector('#date');
+    
+    let date = new Date();
+    let thisYear = date.getFullYear();
+    let thisDate = date.getDate();
+    
+    year.onclick = () => {
+        for (let i = thisYear; i-- >= 1920;) {
+        let opt = document.createElement('option');
+        year.appendChild(opt);
+        opt.value = i;
+        opt.innerHTML = i;
+        }
+    }
+    day.onclick = () => {
+        for (let i = 1; i < 32; i++){
+        let opt = document.createElement('option');
+        day.appendChild(opt);
+        opt.value = i;
+        opt.innerHTML = i;
+        }
+    }
+
+    day.onchange = checkDate;
+    month.onchange = checkDate; 
+    
+    function checkDate(){
+        let innerDate = new Date(year.value, month.value, day.value);
+        if(day.value != innerDate.getDate()){
+            alert(day.value + ('.') + month.value + ('.') + year.value + (' ') + 'does not exist!');
+            day.value = 1;
+            
+        }        
+    }
+    
+</script> -->
+
+<!-- Реализуйте калькулятор валют. 
+    Есть два селекта - селект с исходной валюты, селект с той валютой, в которую мы хотим перевести деньги, инпут, в который вводится сумма для обмена. 
+    Курсы валют храните в массиве. 
+    Сделайте так, чтобы в селектах нельзя было выбрать две одинаковых валюты. -->
+
+<!-- <div>
+    <label for="A">Insert a currency what you want to buy.</label><br>
+    <select name="A" id="a">
+
+    </select><br><br>
+    <label for="B">Insert a carrency what you to sell.</label><br>
+    <select name="B" id="b">
+        
+    </select><br><br>
+    <label for="num">Insert a sum of carrency you want to buy.</label><br>
+    <input name="num" type="text"><br><br>
+    <p></p>
+</div>
+
+<script>
+    let cur = {'RUB': 1,'USD': 72.6022, 'EUR': 82.2583, 'AUD': 52.9052, 'CAD': 57.5751, 'CNY': 11.3773, 'GBP': 98.0202, 'JPY': 63.6275};
+    let keys = Object.keys(cur);
+    console.log(keys);
+    let a = document.querySelector('#a');
+    let b = document.querySelector('#b');
+    let inp = document.querySelector('input');
+    let p = document.querySelector('p');
+    a.onclick = () => {      
+        if(a.children.length == 0){
+            for(let i = 0; i < keys.length; i++){
+            let opt = document.createElement('option');
+            opt.value = cur[keys[i]];
+            opt.innerHTML = keys[i];
+            a.appendChild(opt);
+            } 
+        }
+        
+    }
+
+    b.onclick = () => {
+        if(b.children.length == 0){
+            for(let i = 0; i < keys.length; i++){
+            let opt = document.createElement('option');
+            opt.value = cur[keys[i]];
+            opt.innerHTML = keys[i];
+            b.appendChild(opt);
+            }
+        }
+        
+    }
+
+    inp.onblur = () => {
+        p.innerHTML = '';
+        if(keys[a.selectedIndex] != keys[b.selectedIndex]){
+            let sum = Number(a.value) * Number(inp.value) / Number(b.value);
+            p.innerHTML = ('It takes a ') + sum + (' ') + keys[b.selectedIndex];
+        }
+    }
+</script> -->
+
+<!-- Реализуйте генератор таблиц, 
+ширина и высота таблиц задается в двух инпутах 
+(например, таблица 5 на 10 ячеек). -->
+
+<label for="rows">Rows</label><br>
+<input name="rows" id="rows"  type="text"><br><br>
+<label for="cells">Cells</label><br>
+<input name="cells" id="cells"  type="text"><br><br>
+<input id="button" type="button" value="constract"><br>
+<table></table>
+
+<script>
+    let table = document.querySelector('table');
+    let rowInp = document.querySelector('#rows');
+    let celInp = document.querySelector('#cells');
+    let button = document.querySelector('#button');
+   
+    button.onclick = genTab;
+
+    function genTab(){
+        
+        console.log(Number(celInp.value));
+        for(let i = 0; i < Number(rowInp.value); i++){
+            let tr = document.createElement('tr');
+            tr.id = i;
+            table.appendChild(tr);
+            for(let j = 0; j < Number(celInp.value).length; j++){
+                let elem = document.getElementById(i);
+                console.log(elem);
+                let cell = document.createElement('td');
+                elem.appendChild(cell);
+            }
+        }
+        console.log(table);
+    }
+</script>
+    
 
 </body>
 </html>
