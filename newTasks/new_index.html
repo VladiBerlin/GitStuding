@@ -1644,7 +1644,7 @@ function hideCities(){
 ширина и высота таблиц задается в двух инпутах 
 (например, таблица 5 на 10 ячеек). -->
 
-<label for="rows">Rows</label><br>
+<!-- <label for="rows">Rows</label><br>
 <input name="rows" id="rows"  type="text"><br><br>
 <label for="cells">Cells</label><br>
 <input name="cells" id="cells"  type="text"><br><br>
@@ -1652,31 +1652,84 @@ function hideCities(){
 <table></table>
 
 <script>
-    let table = document.querySelector('table');
     let rowInp = document.querySelector('#rows');
     let celInp = document.querySelector('#cells');
     let button = document.querySelector('#button');
-   
     button.onclick = genTab;
 
     function genTab(){
-        
-        console.log(Number(celInp.value));
+
+        let table = document.querySelector('table');
+        table.style.cssText = 'margin: 30px;';
+
+        if(table == undefined){
+            
+            table = document.createElement('table');
+        } else{
+            
+            table.innerHTML = '';
+        }
+                
         for(let i = 0; i < Number(rowInp.value); i++){
+            
             let tr = document.createElement('tr');
-            tr.id = i;
             table.appendChild(tr);
-            for(let j = 0; j < Number(celInp.value).length; j++){
-                let elem = document.getElementById(i);
-                console.log(elem);
+        }
+
+        let rows = document.querySelectorAll('tr');
+        
+        for(let i = 0; i < rows.length; i++){
+            
+            for(let j = 0; j < Number(celInp.value); j++){
+                
                 let cell = document.createElement('td');
-                elem.appendChild(cell);
+                //cell.innerHTML = j + 1;
+                cell.style.cssText = 'margin: 30px; padding: 50px; color: red;'
+                rows[i].appendChild(cell);
             }
         }
         console.log(table);
     }
-</script>
+</script> -->
+
+<!-- Дан список и кнопка. По нажатию на кнопку посортируйте пункты списка по возрастанию. -->
     
+<ul>
+    <li>Moscow</li>
+    <li>Paris</li>
+    <li>New-York</li>
+    <li>Pekin</li>
+    <li>Amsterdam</li>
+</ul><br><br>
+<button>push</button><br><br>
+
+
+<script>
+    let ul = document.querySelector('ul');
+    let elems = document.querySelectorAll('li');
+    let button = document.querySelector('button');
+    button.onclick = sortTheme;
+
+    function sortTheme(){
+        
+        let data = [];
+        for(let i = 0; i < elems.length; i++){
+            let elem =  elems[i].innerHTML;
+            data.push(elem);
+        }
+        
+        data.sort();
+        ul.innerHTML = '';
+                      
+        for(let i = 0; i < data.length; i++){
+
+            let li = document.createElement('li');
+            li.innerHTML = data[i];
+            ul.appendChild(li);
+        }
+    }
+
+</script>
 
 </body>
 </html>
