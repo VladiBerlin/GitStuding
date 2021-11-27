@@ -74,7 +74,7 @@
 		}
 	</style>
     </head>
-<body>
+<Реализуйте>
 
 <!-- 31.1 Даны 3 инпута и кнопка. По нажатию на кнопку получите числа, стоящие в этих инпутах и запишите их сумму в четвертый инпут. -->
 
@@ -1581,9 +1581,9 @@ function hideCities(){
 </script> -->
 
 <!-- Реализуйте калькулятор валют. 
-    Есть два селекта - селект с исходной валюты, селект с той валютой, в которую мы хотим перевести деньги, инпут, в который вводится сумма для обмена. 
-    Курсы валют храните в массиве. 
-    Сделайте так, чтобы в селектах нельзя было выбрать две одинаковых валюты. -->
+Есть два селекта - селект с исходной валюты, селект с той валютой, в которую мы хотим перевести деньги, инпут, в который вводится сумма для обмена. 
+Курсы валют храните в массиве. 
+Сделайте так, чтобы в селектах нельзя было выбрать две одинаковых валюты.  -->
 
 <!-- <div>
     <label for="A">Insert a currency what you want to buy.</label><br>
@@ -1635,7 +1635,7 @@ function hideCities(){
         p.innerHTML = '';
         if(keys[a.selectedIndex] != keys[b.selectedIndex]){
             let sum = Number(a.value) * Number(inp.value) / Number(b.value);
-            p.innerHTML = ('It takes a ') + sum + (' ') + keys[b.selectedIndex];
+            p.innerHTML = ('It takesf ') + sum + (' ') + keys[b.selectedIndex];
         }
     }
 </script> -->
@@ -1694,49 +1694,13 @@ function hideCities(){
 
 <!-- Дан список и кнопка. По нажатию на кнопку посортируйте пункты списка по возрастанию. -->
     
-<!-- <ul>
-    <li>Moscow</li>
-    <li>Paris</li>
-    <li>New-York</li>
-    <li>Pekin</li>
-    <li>Amsterdam</li>
-</ul><br><br>
-<button>push</button><br><br>
-
-
-<script>
-    let ul = document.querySelector('ul');
-    let elems = document.querySelectorAll('li');
-    let button = document.querySelector('button');
-    button.onclick = sortTheme;
-
-    function sortTheme(){
-        
-        let data = [];
-        for(let i = 0; i < elems.length; i++){
-            let elem =  elems[i].innerHTML;
-            data.push(elem);
-        }
-        
-        data.sort();
-        ul.innerHTML = '';
-                      
-        for(let i = 0; i < data.length; i++){
-
-            let li = document.createElement('li');
-            li.innerHTML = data[i];
-            ul.appendChild(li);
-        }
-    }
-
-</script> -->
 
 <!-- Дан ряд ссылок. 
 Сделайте так, чтобы по нажатию на ссылку она становилась с красным фоном. 
 По нажатию на другую ссылку выделение первой ссылки снимается и выделяется та, на которую мы нажали. 
 В абзац ниже пишите текст активной ссылки. -->
 
-<a href="https://www.google.com">google</a><br>
+<!-- <a href="https://www.google.com">google</a><br>
 <a href="https://www.yandex.ru">yandex</a><br>
 <a href="https://www.rambler.ru">rambler</a><br>
 <a href="https://www.facebook.com">facebook</a><br>
@@ -1757,9 +1721,9 @@ function hideCities(){
         this.style.color = 'red';
         par.innerHTML = this.href;
         event.preventDefault();
-    }
+    } 
 
-</script>
+</script>-->
 
 </body>
 </html>
